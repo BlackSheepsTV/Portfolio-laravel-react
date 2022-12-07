@@ -1,0 +1,148 @@
+@use './variables' as v;
+
+.box-quizz-wrapper {
+    width: 80%;
+    min-width: 550px;
+    min-height: 375px;
+}
+
+.questions-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .question-row {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+        font-weight: bold;
+
+        .question-number {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            border-radius: 16px;
+            padding: 10px;
+            font-size: 1.5rem;
+            margin-bottom: 20px; 
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .question {
+            font-size: 1.3rem;
+        }
+    }
+
+    .choice-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;  
+    }
+}
+
+// ---------------- ANSWER ---------------- //
+
+.answer-wrapper {
+    width: 40%;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    padding: 10px 30px;
+    border-radius: 8px;
+    text-align: center;
+
+    .response {
+       
+        font-weight: bold;
+    }
+}
+
+// ---------------- RESULT ---------------- //
+
+.result-wrapper {
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 16px;
+    padding: 10px;
+    font-size: 1.5rem; 
+
+    .result-title {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        border-radius: 16px;
+        margin-bottom: 10px;
+        padding: 10px;
+        font-size: 1.5rem;
+         font-weight: bold;
+        background-color: rgba(0, 0, 0, 0.5);
+          
+    }
+
+    .score-wrapper {
+        width: 100%;
+        min-height: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        .score-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px ;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .score {
+           
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .percentage-wrapper {
+           width: 20%;
+           height: auto;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+        }
+
+        .border-animation {
+            margin-top: 20px;
+        }
+
+    }   
+}
+
+
+// ---------------- CSS Transition ---------------- //
+
+.show-quizz-answer-enter {
+    opacity: 0;
+    scale: 0.6;
+}
+
+.show-quizz-answer-enter-active {
+    opacity: 1;
+    scale: 1;
+    transition: all 500ms;
+}
+
+@media (min-width: 1450px) {
+    .box-quizz-wrapper {
+        width: 60%;
+    }
+}

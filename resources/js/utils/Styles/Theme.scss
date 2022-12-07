@@ -1,0 +1,34 @@
+@use './variables.scss' as v;
+
+.choose-theme-wrapper {
+    position: absolute;
+    width: 100px;
+    top: 0px;
+    left: 42px;
+    
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    background: #424257;
+    z-index: 0;
+}
+
+.theme-wrapper {
+    width: 100%;
+    border-radius: 8px;
+    padding: 6px 10px;
+
+    &:last-child {
+        margin: 0;
+    }
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .theme {
+        width: 100%;
+        height: 20px;
+        border-radius: 8px;
+    }
+}

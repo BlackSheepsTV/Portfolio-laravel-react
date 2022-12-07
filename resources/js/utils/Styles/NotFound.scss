@@ -1,0 +1,12 @@
+.notfound-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .bi-emoji-dizzy-fill {
+        width: 400px;
+        height: 400px;
+        margin-right: 40px;
+        color: rgba(255, 255, 255, 0.5);
+    }
+}

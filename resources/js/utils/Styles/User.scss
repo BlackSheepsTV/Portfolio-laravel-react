@@ -1,0 +1,114 @@
+// ---------------- PROFILE ---------------- //
+
+.profile-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar {
+    position: relative;
+    min-width: 170px;
+    min-height: 170px;
+    margin-right: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0px 10px 20px rgba( 0, 0, 0, 1);
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+// ---------------- USER DATA ---------------- //
+
+.userdata-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .data-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-right: 25px;
+        margin-bottom: 20px;
+
+        .title-wrapper {
+
+            display: flex;
+            align-items: center;
+
+            .icon {
+                margin-bottom: 2px;
+                margin-right: 6px;
+            }
+
+            .title {
+                font-size: 1.2rem;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+
+        }
+
+        .data-row {
+
+            display: flex;
+            align-items: center;
+            
+            .data {
+                color: rgba( white, 0.7);
+                font-size: 0.9rem;
+                margin-right: 8px;
+            }
+
+            .eye {
+                color: rgba( 255, 255, 255, 0.8);
+                cursor: pointer;
+            }
+        }
+
+        
+    }
+}
+
+.confidentiel {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    font-style: italic;
+    font-size: 0.7rem;
+    color: rgba( 255, 255, 255, 0.4);
+}
+
+@media (min-width: 650px) {
+
+    .userdata-wrapper {
+        max-width: 355px;
+    }
+}
+
+
+@media (min-width: 1000px) {
+
+    $heightProfile: 250px;
+
+    .avatar {
+        width: $heightProfile;
+        height: $heightProfile;
+        margin-right: 100px;
+    }
+
+    .userdata-wrapper {
+        height: $heightProfile;
+    }
+
+}

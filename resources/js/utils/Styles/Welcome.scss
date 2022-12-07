@@ -1,0 +1,51 @@
+@use './variables' as v;
+
+.welcome {
+    width: 100%;
+    top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .box-wrapper {
+        min-width: 550px;
+    }
+
+    .bi { 
+        width: 400px;
+        height: 400px;
+        margin-top: 40px;
+        color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+.welcome-questions-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 20%;
+
+}
+
+// ---------------- TRY AGAIN ---------------- //
+
+.tryagain-wrapper {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    span {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+}
+

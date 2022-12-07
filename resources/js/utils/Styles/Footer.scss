@@ -1,0 +1,245 @@
+@use './variables.scss' as v;
+
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    border-top: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.contact-wrapper {
+    width: 80%;
+    min-width: 550px;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 16px;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 10px 20px 50px rgba( 0, 0, 0, 1);
+
+    &:hover {
+        animation: animateHover 3s linear infinite;
+    }
+
+    .answer-wrapper {
+        margin-top: 10px;
+        padding: 10px 30px;
+    }
+
+    .contact-title {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+      
+}
+
+// ---------------- FORM ---------------- //
+
+.form-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;   
+}
+
+.small-input {
+    width: 33%;
+}
+
+.medium-input {
+    width: 50%;
+}
+
+.input-row {
+
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    min-height: 65px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+   
+   
+    label {
+        width: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        padding: 10px 10px 0px 0px;
+        font-size: 1.1rem;
+        cursor: text;
+        transition: all 0.5s;
+
+        .star {
+            color: v.$red;
+        }
+    }
+
+    .label-focus {
+        font-size: 0.9rem;
+    }
+
+    input {
+        width: 100%;
+        height: 0;
+        font-size: 1rem;
+        color: white;
+        background-color: transparent;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+        transition: 0.5s;
+
+        &::placeholder {
+            position: absolute;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.4);
+        }
+        
+        &:focus {
+            height: 30px;
+            padding: 10px;
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 1);
+        }
+
+        &:not(:focus).focused:valid, &:focus.focused:valid {
+            height: 30px;
+            border-bottom: 1px solid v.$green;  
+        }  
+
+        &:not(:focus).focused:invalid, &:focus.focused:invalid {
+            height: 30px;
+            border-bottom: 1px solid v.$red;  
+        }  
+    }
+}
+
+// ---------------- TEXT AREA ---------------- //
+
+.textarea-wrapper {
+
+    width: 100%;
+    margin-top: 12px;
+
+    label {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.1rem;
+
+        .star {
+            color: v.$red;
+        }
+
+        textarea {
+            margin-top: 6px;
+            line-height: 25px;
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+            outline: none;
+            background-color: transparent;
+            color: white;
+            resize: none;
+        
+            &:focus {
+                border: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 1);
+            }
+        
+            &:not(:focus).focused:valid, &:focus.focused:valid {
+                border-bottom: 1px solid v.$green;  
+            }  
+        
+            &:not(:focus).focused:invalid, &:focus.focused:invalid {
+                border-bottom: 1px solid v.$red;  
+            }
+
+        }
+
+        .count {
+            display: flex;
+            justify-content: flex-end;
+            font-size: 0.9rem;
+            margin-top: 6px;
+        }
+
+    }   
+
+}
+
+.submit-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .button {
+        width: 30%;
+    }
+}
+
+// ---------------- Linkedin ---------------- //
+
+.link-wrapper {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    right: 5px;
+    bottom: 5px;
+    z-index: 999;
+
+    .link {
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+    
+        .bi {
+            width: 100%;
+            height: 100%;
+            color: rgba(255, 255, 255, 0.6);
+            z-index: 1;
+
+            &:hover {
+                color: rgba(255, 255, 255, 1);
+            }
+        } 
+    }
+}
+
+
+
+// ---------------- Tansition ---------------- //
+
+.showanswer-enter {
+    opacity: 0;
+    scale: 0.6;
+}
+
+.showanswer-enter-active {
+    opacity: 1;
+    scale: 1;
+    transition: all 1s;
+}
+
+.showanswer-exit {
+    opacity: 1;
+    scale: 1;
+}
+
+.showanswer-exit-active {
+    opacity: 0;
+    scale: 0.6;
+    transition: all 1s;
+}
+  
