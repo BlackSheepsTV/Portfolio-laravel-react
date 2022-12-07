@@ -7,7 +7,7 @@
 
         <link rel="icon" href="{{ asset('storage/Gaetan.png') }}" type="image/jpg" >
         <title>Portfolio - Gaëtan ETAME</title>
-        
+        a
         <meta
         name="description"
         content="Bienvenue sur le portfolio intéractif de Gaëtan ETAME, développeur web fullstack junior."
