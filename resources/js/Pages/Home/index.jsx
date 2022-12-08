@@ -103,7 +103,7 @@ function Home() {
        
         <div className='section-wrapper easy' ref={skill}>
           <div className='section-title'>
-            <h2>Compétences</h2>
+            <h2>Compétences Test</h2>
           </div>
           
           <Skill />
