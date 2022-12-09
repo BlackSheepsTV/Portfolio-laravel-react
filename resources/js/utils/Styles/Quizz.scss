@@ -46,7 +46,6 @@
 // ---------------- ANSWER ---------------- //
 
 .answer-wrapper {
-    width: 40%;
     display: flex;
     justify-content: center;
     padding: 10px 30px;
@@ -137,6 +136,13 @@
     opacity: 1;
     scale: 1;
     transition: all 500ms;
+}
+
+@media (min-width: 1000px) {
+
+    .answer-wrapper {
+        width: 40%;
+    }
 }
 
 @media (min-width: 1450px) {
