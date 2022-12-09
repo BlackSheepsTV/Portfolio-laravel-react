@@ -13,7 +13,6 @@ footer {
 
 .contact-wrapper {
     width: 80%;
-    min-width: 550px;
     max-width: 1000px;
     display: flex;
     flex-direction: column;
@@ -79,7 +78,7 @@ footer {
         justify-content: flex-end;
         align-items: flex-start;
         padding: 10px 10px 0px 0px;
-        font-size: 1.1rem;
+        font-size: 0.9rem;
         cursor: text;
         transition: all 0.5s;
 
@@ -88,14 +87,10 @@ footer {
         }
     }
 
-    .label-focus {
-        font-size: 0.9rem;
-    }
-
     input {
         width: 100%;
         height: 0;
-        font-size: 1rem;
+        font-size: 0.8rem;
         color: white;
         background-color: transparent;
         border-bottom: 1px solid rgba(255, 255, 255, 0.4);
@@ -243,3 +238,15 @@ footer {
     transition: all 1s;
 }
   
+@media (min-width: 700px) {
+    .input-row {
+
+        label {
+            font-size: 1.1rem;
+
+            input {
+                font-size: 1rem;
+            }
+        }
+    }
+}

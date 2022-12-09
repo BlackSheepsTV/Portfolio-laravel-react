@@ -8,9 +8,9 @@
 
 .avatar {
     position: relative;
-    min-width: 170px;
-    min-height: 170px;
-    margin-right: 45px;
+    min-width: 150px;
+    min-height: 150px;
+    margin-right: 35px;
     border-radius: 50%;
     overflow: hidden;
     cursor: pointer;
@@ -31,6 +31,7 @@
 .userdata-wrapper {
     position: relative;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 

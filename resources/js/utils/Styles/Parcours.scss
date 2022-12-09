@@ -31,10 +31,17 @@
 }
 
 .date-wrapper {
-
+    display: flex;
+    flex-direction: column;
     margin-bottom: 4px;
     
     .date {
         font-weight: bold;
+    }
+}
+
+@media (min-width: 700px) {
+    .date-wrapper {
+       display: block;
     }
 }

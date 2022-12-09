@@ -14,7 +14,6 @@ import { CSSTransition} from 'react-transition-group'
 
 const SectionRow = styled.div`
   width: 80%;
-  min-width: 550px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
