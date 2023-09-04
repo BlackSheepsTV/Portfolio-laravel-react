@@ -6,7 +6,7 @@ export const StyledGlobalStyle = createGlobalStyle`
       font-family: 'Trebuchet MS', Helvetica, sans-serif;
     }
 
-    body {
+    #app {
       
       background: ${({ theme }) => theme.bg};
       color: ${({ theme }) => theme.text};
