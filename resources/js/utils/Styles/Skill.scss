@@ -41,7 +41,6 @@
         background: linear-gradient(135deg, #aa00cc, #7f0099); // 40% et 30%
         transform: translateX(calc(50%));
         transition: 1s ease-in-out;
-    
     }
 }
 
@@ -73,7 +72,9 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
+        border-radius: 8px;
         flex: 1;
+        background-color: rgba(0, 0, 0, 0.4);
 
         .skill {
             width: 100%;
@@ -121,17 +122,20 @@
 
     .skill-wrapper {
         width: 100%;
-        height: 100px;
         display: flex;
         justify-content: space-around;
-        align-items: center;  
-        
+        align-items: center;
+        gap: 10px;  
+        flex-wrap: wrap;
+
         .skill {
+            min-width: 100px;
             display: flex;
             justify-content: center;
             align-items: center;
             border-radius: 6px;
             padding: 10px 0;
+            background-color: rgba(0, 0, 0, 0.6);
             flex: 1;
             cursor: pointer;
             
