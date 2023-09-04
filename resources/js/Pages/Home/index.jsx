@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
-import PageStyle from '../../utils/Styles/Page'
+import MainStyle from '../../utils/Styles/Page'
 import Welcome from '../../Components/Welcome'
 import User from '../../Components/User'
 import Skill from '../../Components/Skill'
@@ -83,63 +83,58 @@ function Home() {
   }, [isReady]);
 
   return (
-    <PageStyle>
-
+  <>
+    <MainStyle>
       <Welcome isReady={isReady} setIsReady={setIsReady} welcome={welcome}/>
-
-     <CSSTransition
-      in={isReady}
-      timeout={1500}
-      classNames="fade-in"
-      unmountOnExit
-      nodeRef={nodeRef}
+      <CSSTransition
+        in={isReady}
+        timeout={1500}
+        classNames="fade-in"
+        unmountOnExit
+        nodeRef={nodeRef}
       >
-      <div className='page-wrapper'ref={nodeRef}>
-      
-        <div className='section-wrapper' >
+        <div className='page-wrapper' ref={nodeRef}>
+          
           <User />
-        </div>
-       
-        <div className='section-wrapper easy' ref={skill}>
-          <div className='section-title'>
-            <h2>Compétences</h2>
-          </div>
           
-          <Skill />
-        </div>
-
-        <SectionRow>
-          <div className='section-flex' ref={parcours}>
+          <div className='section-wrapper easy' ref={skill}>
             <div className='section-title'>
-              <h2>Parcours</h2>
+              <h2>Compétences</h2>
             </div>
-
-            <Parcours />
             
+            <Skill />
           </div>
+
+          <SectionRow>
+            <div className='section-flex' ref={parcours}>
+              <div className='section-title'>
+                <h2>Parcours</h2>
+              </div>
+
+              <Parcours />
+              
+            </div>
+            
+            <div className='section-flex'>
+              <div className='section-title'>
+                <h2>Formations</h2>
+              </div>
+
+              <Formation />
+              
+            </div>
+          </SectionRow>
           
-          <div className='section-flex'>
-            <div className='section-title'>
-              <h2>Formations</h2>
-            </div>
-
-            <Formation />
-            
+          <div className='section-quizz' ref={quizz}>
+            <h2>Quizz</h2>
+            <Quizz />
           </div>
-        </SectionRow>
-        
-        <div className='section-quizz' ref={quizz}>
-          <h2>Quizz</h2>
-          <Quizz />
         </div>
-        
-        <Footer contact={contact} />
-        
-      </div> 
-      </CSSTransition>
-
-    </PageStyle>
-  );
+      </CSSTransition>                                
+    </MainStyle>
+    {isReady && <Footer contact={contact} />}
+  </>
+  )
 }
 
 export default Home;
