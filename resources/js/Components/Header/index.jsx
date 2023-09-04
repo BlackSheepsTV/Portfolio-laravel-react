@@ -10,9 +10,10 @@ import Theme from './Theme'
 
 import { CSSTransition} from 'react-transition-group'
 
-const HeaderWrapper = styled.div`
+const HeaderWrapper = styled.header`
   position: fixed;
   height: 100vh;
+  left: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
