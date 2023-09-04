@@ -7,7 +7,7 @@ function Welcome({isReady, setIsReady, welcome}) {
 
     return (
       
-        <div className='welcome' style={isReady === true ? {position: 'relative'} : {position: 'absolute'}} ref={welcome}>
+        <div className='welcome' ref={welcome}>
 
             <h1>Bienvenue</h1>
 
