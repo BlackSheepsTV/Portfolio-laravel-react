@@ -8,9 +8,10 @@ export const front = [
 ]
 
 export const back = [
-
+    'Node',
     'PHP',
     'SQL / MySQL',
+    'MongoDb',
     'LARAVEL',
     'API REST'
 ]
