@@ -7,9 +7,7 @@ function Welcome({isReady, setIsReady, welcome}) {
 
     return (
       
-        <div className='welcome' ref={welcome}>
-
-            <h1>Bienvenue</h1>
+        <div className='welcome' ref={welcome}>            
 
             {!isReady && !showTryAgain &&
             <div className='welcome-questions-wrapper'>
