@@ -1,12 +1,13 @@
 @use './variables' as v;
 
 .date-wrapper-header {
-    position: absolute;
-    top: 1%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    padding: 0 4px;
+    border-radius: 8px;
+    background: rgba(#0b0b0f, 0.6);
 
     .date-row {
         width: 100%;
@@ -25,11 +26,10 @@
 }
 
 nav {
-    width: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 5px;
+    padding: 6px;
     border-radius: 50px;
     background: linear-gradient(180deg, #21212c, #585874);
 }
@@ -39,14 +39,12 @@ ul {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column;
     align-items: center;
 
     li {
         position: relative;
         display: flex;
         list-style: none;
-        margin-bottom: 5px;
         padding: 5px;
         border-radius: 50%;
         cursor: pointer;
@@ -64,6 +62,13 @@ ul {
             white-space: nowrap;
    
         }
+
+        
+    }
+    
+    .main-nav {
+        display: flex;
+        align-items: center;
     }
 
     .li-theme {
@@ -82,31 +87,6 @@ ul {
 
 
 @media (min-width: 700px) {
-    nav {
-        width: 50px;
-    }
 
-    ul {
-
-        li {
-            margin-bottom: 10px;
-            padding: 10px;
-
-            
-            .bi {
-                font-size: 40px;
-            } 
-            
-            
-        }
-    }
-
-    .li-theme {
-        padding: 5px;
-    }
-
-    .choose-theme {
-        width: 25px;
-        height: 25px;
-    }
+    
 }
