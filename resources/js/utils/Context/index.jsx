@@ -11,15 +11,13 @@ export const GlobalProvider = ({ children }) => {
         setTheme(color)
     }
 
-    const [isReady, setIsReady] = useState(false)
-
     const [currentDate, setCurrentDate] = useState(new Date());
 
     useEffect(() => {
         setInterval(() => setCurrentDate(new Date()), 1000);
     }, []);
 
-    const welcome = useRef(null)
+    const user = useRef(null)
     const skill = useRef(null)
     const parcours = useRef(null)
     const quizz = useRef(null)
@@ -28,7 +26,7 @@ export const GlobalProvider = ({ children }) => {
     const [sectionIntercept, setSectionIntercept] = useState()
  
     return (
-        <GlobalContext.Provider value={{ theme, toggleTheme, isReady, setIsReady, currentDate, welcome, skill , parcours, quizz, contact, sectionIntercept, setSectionIntercept }}>
+        <GlobalContext.Provider value={{ theme, toggleTheme, currentDate, user, skill , parcours, quizz, contact, sectionIntercept, setSectionIntercept }}>
             {children}
         </GlobalContext.Provider>
     )
