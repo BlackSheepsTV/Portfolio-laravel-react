@@ -68,8 +68,8 @@ function Footer({contact}) {
     }, [inputsValue])
    
     return (
-        <footer>
-            <div className="contact-wrapper" ref={contact}>
+        <footer ref={contact}>
+            <div className="contact-wrapper">
                
                 <span className='contact-title'>Pour me contacter</span>
 
