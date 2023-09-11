@@ -44,9 +44,9 @@ const SectionRow = styled.div`
 function Home() {
   
   const { isReady, setIsReady } = useIsReady()
-  const { welcome, skill , parcours, quizz , contact, setSectionIntercept, sectionIntercept } = useHeader()
+  const { user, skill , parcours, quizz , contact, setSectionIntercept, sectionIntercept } = useHeader()
   const [allRef, setAllRef] = useState([
-    welcome,
+    user,
     skill,
     parcours,
     quizz,
@@ -56,83 +56,72 @@ function Home() {
   const nodeRef = useRef(null)
 
   useEffect(() => {
-    setSectionIntercept(welcome.current)
+    setSectionIntercept(user.current)
   }, [])
 
   useEffect(() => {
+
+    setTimeout(() => setSectionIntercept(user.current),10)
     
-    if(isReady) {
-      setTimeout(() => setSectionIntercept(welcome.current),10)
-      
-      const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 1
-      }
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.map(entry => {
-          setSectionIntercept(entry.target)
-        })
-      }, options)
-
-      allRef.map((ref) => {
-        observer.observe(ref.current)
-      })
+    const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 1
     }
-  }, [isReady]);
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.map(entry => {
+        setSectionIntercept(entry.target)
+      })
+    }, options)
+
+    allRef.map((ref) => {
+      observer.observe(ref.current)
+    })
+    
+  }, [])
 
   return (
   <>
     <MainStyle>
-      <Welcome isReady={isReady} setIsReady={setIsReady} welcome={welcome}/>
-      <CSSTransition
-        in={isReady}
-        timeout={1500}
-        classNames="fade-in"
-        unmountOnExit
-        nodeRef={nodeRef}
-      >
-        <div className='page-wrapper' ref={nodeRef}>
-          
-          <User />
-          
-          <div className='section-wrapper easy' ref={skill}>
-            <div className='section-title'>
-              <h2>Compétences</h2>
-            </div>
-            
-            <Skill />
+      <div className='page-wrapper'>
+        <User user={user}/>
+        
+        <div className='section-wrapper easy' ref={skill}>
+          <div className='section-title'>
+            <h2>Compétences</h2>
           </div>
-
-          <SectionRow>
-            <div className='section-flex' ref={parcours}>
-              <div className='section-title'>
-                <h2>Parcours</h2>
-              </div>
-
-              <Parcours />
-              
-            </div>
-            
-            <div className='section-flex'>
-              <div className='section-title'>
-                <h2>Formations</h2>
-              </div>
-
-              <Formation />
-              
-            </div>
-          </SectionRow>
           
-          <div className='section-quizz' ref={quizz}>
-            <h2>Quizz</h2>
-            <Quizz />
-          </div>
+          <Skill />
         </div>
-      </CSSTransition>                                
+
+        <SectionRow>
+          <div className='section-flex' ref={parcours}>
+            <div className='section-title'>
+              <h2>Parcours</h2>
+            </div>
+
+            <Parcours />
+            
+          </div>
+          
+          <div className='section-flex'>
+            <div className='section-title'>
+              <h2>Formations</h2>
+            </div>
+
+            <Formation />
+            
+          </div>
+        </SectionRow>
+        
+        <div className='section-quizz' ref={quizz}>
+          <h2>Quizz</h2>
+          <Quizz />
+        </div>
+      </div>                        
     </MainStyle>
-    {isReady && <Footer contact={contact} />}
+    <Footer contact={contact}/>
   </>
   )
 }
