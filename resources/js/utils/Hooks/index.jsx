@@ -18,7 +18,7 @@ export function useDate() {
 }
 
 export function useHeader() {
-  const { welcome, skill , parcours, quizz , contact, sectionIntercept, setSectionIntercept} = useContext(GlobalContext)
-  return { welcome, skill , parcours, quizz , contact, sectionIntercept, setSectionIntercept}
+  const { user, skill , parcours, quizz , contact, sectionIntercept, setSectionIntercept} = useContext(GlobalContext)
+  return { user, skill , parcours, quizz , contact, sectionIntercept, setSectionIntercept}
 }
 
