@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import MainStyle from '../../utils/Styles/Page'
-import Welcome from '../../Components/Welcome'
 import User from '../../Components/User'
 import Skill from '../../Components/Skill'
 import Parcours from '../../Components/Parcours'
@@ -43,7 +42,6 @@ const SectionRow = styled.div`
 
 function Home() {
   
-  const { isReady, setIsReady } = useIsReady()
   const { user, skill , parcours, quizz , contact, setSectionIntercept, sectionIntercept } = useHeader()
   const [allRef, setAllRef] = useState([
     user,
