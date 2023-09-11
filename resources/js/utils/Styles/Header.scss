@@ -16,6 +16,8 @@
         align-items: center;
 
         svg {
+            width: 20px;
+            height: 20px;
             margin-right: 6px;
         }
 
@@ -45,15 +47,22 @@ ul {
     li {
         position: relative;
         display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
         list-style: none;
         padding: 5px;
         border-radius: 50%;
         cursor: pointer;
 
-        
-
         &:hover {
             background-color: rgba(#0b0b0f, 0.4);
+        }
+
+        svg {
+            width: 20px;
+            height: 20px;
         }
        
         a {
