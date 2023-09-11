@@ -8,7 +8,7 @@ import Formation from '../../Components/Formation'
 import Quizz from '../../Components/Quizz'
 import Footer from '../../Components/Footer'
 
-import { useHeader, useIsReady } from '../../utils/Hooks'
+import { useHeader } from '../../utils/Hooks'
 import { CSSTransition} from 'react-transition-group'
 
 const SectionRow = styled.div`
