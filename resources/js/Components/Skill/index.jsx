@@ -10,7 +10,6 @@ function Skill() {
     function changeToBack() {
         setSlide('mode-slide')
         setTimeout(() => setShowFront(false), 600)
-        
     }
 
     function changeToFront() {
