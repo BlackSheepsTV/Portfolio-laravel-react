@@ -9,10 +9,9 @@ import Quizz from '../../Components/Quizz'
 import Footer from '../../Components/Footer'
 
 import { useHeader } from '../../utils/Hooks'
-import { CSSTransition} from 'react-transition-group'
 
 const SectionRow = styled.div`
-  width: 80%;
+  width: 92%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -42,7 +41,7 @@ const SectionRow = styled.div`
 
 function Home() {
   
-  const { user, skill , parcours, quizz , contact, setSectionIntercept, sectionIntercept } = useHeader()
+  const { user, skill , parcours, quizz , contact, setSectionIntercept } = useHeader()
   const [allRef, setAllRef] = useState([
     user,
     skill,
@@ -51,33 +50,28 @@ function Home() {
     contact,
   ])
 
-  const nodeRef = useRef(null)
-
   useEffect(() => {
-    setSectionIntercept(user.current)
-  }, [])
-
-  useEffect(() => {
-
-    setTimeout(() => setSectionIntercept(user.current),10)
-    
     const options = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 1
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.95
     }
-
+  
     const observer = new IntersectionObserver((entries) => {
-      entries.map(entry => {
-        setSectionIntercept(entry.target)
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setSectionIntercept(entry.target)
+        }
       })
     }, options)
-
-    allRef.map((ref) => {
+  
+    allRef.forEach(ref => {
       observer.observe(ref.current)
     })
+  
+    setTimeout(() => setSectionIntercept(user.current), 10)
     
-  }, [])
+  }, []);
 
   return (
   <>
@@ -87,7 +81,7 @@ function Home() {
         
         <div className='section-wrapper easy' ref={skill}>
           <div className='section-title'>
-            <h2>Compétences</h2>
+            <h2>Skills</h2>
           </div>
           
           <Skill />
@@ -96,7 +90,7 @@ function Home() {
         <SectionRow>
           <div className='section-flex' ref={parcours}>
             <div className='section-title'>
-              <h2>Parcours</h2>
+              <h2>Career</h2>
             </div>
 
             <Parcours />
@@ -105,7 +99,7 @@ function Home() {
           
           <div className='section-flex'>
             <div className='section-title'>
-              <h2>Formations</h2>
+              <h2>Training</h2>
             </div>
 
             <Formation />
