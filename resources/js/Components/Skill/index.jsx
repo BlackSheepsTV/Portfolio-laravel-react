@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { front, back, globalSkill } from '../../Datas/Skill'
 import '../../utils/Styles/Skill.scss'
+import { SlArrowRight, SlArrowLeft } from "react-icons/sl"
 
 function Skill() {
 
@@ -19,85 +20,75 @@ function Skill() {
 
     return ( 
 
-        <div className="box-wrapper box-skill-wrapper">
+        <div className="box-wrapper skills">
 
-            <div className={'front-back-wrapper ' + slide}>
+            <div className={'skill-categories ' + slide}>
 
 {/*----------------------------------------------------------- LEFT SIDE ----------------------------------------------------------------------*/}
-    
-                <div className='side-wrapper'>
-
-                    { showFront &&
-                    <div className='skill-frontback-wrapper skill-front-wrapper'>
-                    
-                        <div className='skill-title'>
-                            <span className='title'>Front</span>
+            { showFront &&
+                <>
+                    <div className='skill'>
+                        <div className='skill__title'>
+                            <p>Front-end</p>
+                            <SlArrowRight style={{right: '6px'}} onClick={() => setShowFront(false)}></SlArrowRight>
                         </div>
 
-                        <div className='skill-wrapper'>
-                            {front.map((skill, index) => (
-                                <div className='skill' key={index}>
-                                    <span>{ skill }</span>
+                        <div className='skill__container'>
+                            {Object.entries(front)
+                            .sort((a, b) => a[0].localeCompare(b[0]))
+                            .map(([key, value], index) => (
+                                <div className='skill__row' key={index}>
+                                    {value !== null && (
+                                        <div style={{ color: value.color }}>
+                                            {value.svg}
+                                        </div>
+                                    )}
+                                    <p>{ key }</p>
                                 </div>
                             ))}
                         </div>
-
-                    </div>
-                    } 
-
-                    {!showFront && 
-                    <div className='skill-frontback-wrapper side'>
-                        <span>Envie de voir le front ?</span>
-                        <div className='border-animation'>
-                            <button className='button' onClick={changeToFront}>Voir</button>
-                        </div>
-                        
-                    </div>
-                    }
-                </div>
+                    </div>                     
+                </> 
+            }
 
  {/*----------------------------------------------------------- RIGHT SIDE ----------------------------------------------------------------------*/}
-
-                <div className='side-wrapper'>
-
-                    { !showFront &&
-                    <div className='skill-frontback-wrapper skill-back-wrapper'>         
-                        <div className='skill-title'>
-                            <span className='title'>Back</span>
-                        </div>
-                        
-                        <div className='skill-wrapper'>
-                            {back.map((skill, index) => (
-                                <div className='skill' key={index}>
-                                    <span>{ skill }</span>
-                                </div>
-                            ))}
-                        </div>
+            { !showFront &&                                    
+                <div className='skill'>         
+                    <div className='skill__title'>
+                        <p>Back-end</p>
+                        <SlArrowLeft style={{left: '6px'}} onClick={() => setShowFront(true)}></SlArrowLeft>
                     </div>
-                    }
-
-                    {showFront && 
-                    <div className='skill-frontback-wrapper side'>
-                        <span>Envie de voir le back ?</span>
-                        <div className='border-animation'>
-                            <button className='button' onClick={changeToBack}>Voir</button>
-                        </div>
+                    
+                    <div className='skill__container'>
+                        {Object.entries(back)
+                        .sort((a, b) => a[0].localeCompare(b[0]))
+                        .map(([key, value], index) => (
+                            <div className='skill__row' key={index}>
+                                {value !== null && (
+                                    <div style={{ color: value.color }}>
+                                        {value.svg}
+                                    </div>
+                                )}
+                                <p>{ key }</p>
+                            </div>
+                        ))}
                     </div>
-                    }
-                </div>
-
+                </div>                                     
+            }
             </div>
 
-            <div className="skill-global-wrapper">
+            <div className="skill skill--global">
 
-                <div className='skill-title'>
-                    <span className='title'>Global</span>
+                <div className='skill__title'>
+                    <p className='title'>Global</p>
                 </div>
                 
-                <div className='skill-wrapper'>
-                    {globalSkill.map((skill, index) => (
-                        <div className='skill' key={index}>
-                            <span>{ skill }</span>
+                <div className='skill__container'>
+                    {globalSkill
+                    .sort((a, b) => a[0].localeCompare(b[0]))
+                    .map((skill, index) => (
+                        <div className='skill__row' key={index}>
+                            <p>{ skill }</p>
                         </div>
                     ))}
                 </div>
