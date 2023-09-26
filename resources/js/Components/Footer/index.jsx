@@ -71,7 +71,7 @@ function Footer({contact}) {
         <footer ref={contact}>
             <div className="contact-wrapper">
                
-                <span className='contact-title'>Pour me contacter</span>
+                <span className='contact-title'>Pour me contacter test</span>
 
                 <CSSTransition
                 in={showAnswer}
