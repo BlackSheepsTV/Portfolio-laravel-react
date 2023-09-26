@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef} from 'react';
 import '../../utils/Styles/Footer.scss'
-import { inputs } from '../../Datas/Input'
+import { inputs } from '../../Datas/Inputs'
 import axios from 'axios';
 import { CSSTransition} from 'react-transition-group'
 
