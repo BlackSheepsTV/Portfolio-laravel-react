@@ -53,7 +53,7 @@ function Header() {
 
       <nav>
         <ul>
-          <li onClick={() => {scrollToSection(user)}} style={user.current === sectionIntercept ? {background: 'rgba(0,0,0, 0.6)'} : {}}><Link to="/">
+          <li onClick={() => {scrollToSection(user)}} style={user.current === sectionIntercept || !sectionIntercept ? {background: 'rgba(0,0,0, 0.6)'} : {}}><Link to="/">
             <BsHouseDoor></BsHouseDoor>
           </Link></li>
           
