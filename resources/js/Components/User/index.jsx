@@ -1,21 +1,5 @@
-import styled from 'styled-components'
 import '../../utils/Styles/User.scss'
-import { userInfo } from '../../Datas/User'
 import Photo from '../../Assets/Gaetan.jpg'
-import { useState, useRef } from 'react'
-
-const Vigilent = styled.span`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 40px;
-    color: #ff6600;
-
-    .vigilent {
-        margin: 0 10px;
-    }
-
-`
 
 function User({user}) {
 
@@ -30,9 +14,9 @@ function User({user}) {
         }
     
         return age;
-      };
+    };
     
-      const age = calculateAge('1995-10-31');
+    const age = calculateAge('1995-10-31');
 
     return (
     <>
