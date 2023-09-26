@@ -1,20 +1,23 @@
-export const front = [
+import { FaCss3Alt, FaHtml5, FaReact, FaVuejs, FaNodeJs, FaPhp, FaLaravel } from "react-icons/fa"
+import { SiMongodb, SiJavascript } from "react-icons/si"
+import { GrMysql } from "react-icons/gr"
 
-    'HTML',
-    'CSS / SASS / BootStrap / Tailwind',
-    'JavaScript',
-    'Vue3',
-    'React',
-]
+export const front = {
+    'HTML': {svg: <FaHtml5 />, color: '#ff6600'},
+    'CSS / SASS / BootStrap': {svg: <FaCss3Alt />, color: '#00ccff'},
+    'JavaScript': {svg: <SiJavascript />, color: '#ffff00'},
+    'Vue3': {svg: <FaVuejs />, color: '#009933'},
+    'React': {svg: <FaReact />, color: '#00ccff'}
+}
 
-export const back = [
-    'Node',
-    'PHP',
-    'SQL / MySQL',
-    'MongoDb',
-    'LARAVEL',
-    'API REST'
-]
+export const back = {
+    'Node': {svg: <FaNodeJs />, color: '#009933'},
+    'PHP': {svg: <FaPhp />, color: '#3366cc'},
+    'SQL / MySQL': {svg: <GrMysql />, color: '#0066cc'},
+    'MongoDb': {svg: <SiMongodb />, color: '#33cc33'},
+    'LARAVEL': {svg: <FaLaravel />, color: '#ff3300'},
+    'API REST': '',
+}
 
 export const globalSkill = [
     'Responsive',
