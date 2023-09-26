@@ -191,7 +191,7 @@ span {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
 
   .section-title {
@@ -199,17 +199,16 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 
     h2 {
       width: 100%;
       display: flex;
       justify-content: center;
       margin: 0;
-      padding: 20px 0;
+      padding: 6px 0;
       border-top: 2px solid white;
       border-bottom: 2px solid white;
-
     }
 
   }
@@ -238,6 +237,7 @@ span {
   h2 {
     display: flex;
     flex-direction: column;
+    margin-bottom: 10px;
   }
 
   .box-wrapper {
