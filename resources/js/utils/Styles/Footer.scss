@@ -13,7 +13,7 @@ footer {
 }
 
 .contact-wrapper {
-    width: 80%;
+    width: 92%;
     max-width: 1000px;
     display: flex;
     flex-direction: column;
@@ -100,7 +100,7 @@ footer {
         &::placeholder {
             position: absolute;
             font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.4);
+            color: transparent
         }
         
         &:focus {
@@ -108,6 +108,10 @@ footer {
             padding: 10px;
             border: none;
             border-bottom: 1px solid rgba(255, 255, 255, 1);
+        }
+
+        &:focus::placeholder {
+            color: rgba(255, 255, 255, 0.4);
         }
 
         &:not(:focus).focused:valid, &:focus.focused:valid {
