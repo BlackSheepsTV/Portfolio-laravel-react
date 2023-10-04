@@ -2,7 +2,7 @@ export const QuizzQuestions = [
     {
         id: '1',
         question: 'What is my first name ?',
-        choice: ['Richard', 'Anthony', 'Gaëtan'],
+        choice: ['Richard', 'Daisy', 'Gaëtan'],
         response: 'Gaëtan'
     },
 
