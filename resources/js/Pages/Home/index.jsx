@@ -125,7 +125,6 @@ function Home() {
           <VideoPlayer />
         </div>
         
-
       </div>                        
     </MainStyle>
     <Footer contact={contact}/>
