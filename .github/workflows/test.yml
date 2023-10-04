@@ -21,7 +21,7 @@ jobs:
 
       - name: pull
         run: |
-          sudo -u "$GIT_USER" git pull origin
+          sudo -u git pull origin
         env:
           SITE_PATH: /var/www/portfolio/
 
