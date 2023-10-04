@@ -16,6 +16,9 @@ jobs:
     - name: Checkout le code source
       uses: actions/checkout@v3
 
+    - name: Vérifier l'acteur de l'action
+      run: echo "L'acteur de l'action est ${{ github.actor }}"
+
     - name: Copier les fichiers vers le répertoire du site web
       run: |
         rsync -av --delete-after ${{ github.workspace }}/ /var/www/portfolio/
