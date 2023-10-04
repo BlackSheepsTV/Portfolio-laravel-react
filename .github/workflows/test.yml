@@ -14,12 +14,12 @@ jobs:
     - name: Checkout le code source
       uses: actions/checkout@v2
       with:
-        node-version: 16
+        node-version: 20
 
     - name: Utiliser Node.js 16
       uses: actions/setup-node@v2
       with:
-        node-version: '16'
+        node-version: '20'
 
     - name: Copier les fichiers vers le répertoire du site web
       run: |
