@@ -13,15 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     steps:
-      - name: Vérifier le contenu de github.workspace
-        run: ls -l ${{ github.workspace }}
-
-      - name: Créer le répertoire du site web
-        run: sudo mkdir -p /var/www/portfolio
-
-      - name: access
-        run: sudo chmod -R 775 /var/www/portfolio
-        
       - name: Débogage
         run: |
           whoami  # Affiche l'utilisateur actuel
@@ -33,12 +24,12 @@ jobs:
       - name: Vérifier l'acteur de l'action
         run: echo "L'acteur de l'action est ${{ github.actor }}"
 
-      - name: Copier les fichiers vers le répertoire du site web
+      - name: pull
         run: |
-          rsync -av --delete-after ${{ github.workspace }}/ /var/www/portfolio/
+          sudo -u "$GIT_USER" git pull origin
         env:
           SITE_PATH: /var/www/portfolio/
 
       - name: Redémarrer Nginx
         run: |
-          sudo systemctl restart nginx
+          sudo /etc/init.d/nginx restart
