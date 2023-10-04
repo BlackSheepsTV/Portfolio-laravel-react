@@ -29,6 +29,9 @@ export const GlobalProvider = ({ children }) => {
 
         if (storedTheme !== null) {
           setTheme(storedTheme)
+        } else {
+            localStorage.setItem('theme', 'dark')
+            document.getElementById('app').classList.add('dark')
         }
         
         if (storedColor !== null) {
