@@ -111,7 +111,6 @@ function Home() {
           
         </div>
         
-        
         <div className='section-quizz' ref={quizz}>
           <h2>Quizz</h2>
           <Quizz />
