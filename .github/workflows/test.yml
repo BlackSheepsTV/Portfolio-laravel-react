@@ -19,6 +19,9 @@ jobs:
       - name: Créer le répertoire du site web
         run: sudo mkdir -p /var/www/portfolio
 
+      - name: access
+        run: sudo chmod -R 775 /var/www/portfolio
+        
       - name: Débogage
         run: |
           whoami  # Affiche l'utilisateur actuel
