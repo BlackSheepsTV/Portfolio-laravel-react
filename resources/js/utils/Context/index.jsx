@@ -30,6 +30,7 @@ export const GlobalProvider = ({ children }) => {
           setTheme(storedTheme)
         } else {
             localStorage.setItem('theme', 'dark')
+            localStorage.setItem('color', 'blue')
             document.getElementById('app').classList.add('dark')
         }
         
