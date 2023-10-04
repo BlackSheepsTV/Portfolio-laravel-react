@@ -16,6 +16,9 @@ jobs:
       - name: Vérifier le contenu de github.workspace
         run: ls -l ${{ github.workspace }}
 
+      - name: Créer le répertoire du site web
+        run: sudo mkdir -p /var/www/portfolio
+
       - name: Débogage
         run: |
           whoami  # Affiche l'utilisateur actuel
