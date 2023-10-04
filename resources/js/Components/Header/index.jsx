@@ -98,7 +98,6 @@ function Header() {
           <div className='date-row'>
             <BsCalendar></BsCalendar>
             <span className='date'>{currentDate.toLocaleDateString()}</span>
-            TEST
             
           </div>
           <div className='date-row'>
