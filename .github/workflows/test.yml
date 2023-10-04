@@ -8,14 +8,16 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [20.x]  
+    runs-on: ubuntu-latest 
 
     steps:
     - name: Checkout le code source
       uses: actions/checkout@v2
+
+    - name: Utiliser Node.js 16
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
 
     - name: Copier les fichiers vers le répertoire du site web
       run: |
