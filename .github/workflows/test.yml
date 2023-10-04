@@ -1,31 +1,26 @@
-name: Mise à jour du site
+name: Deployment
 
-# Déclenchez cette action à chaque push sur la branche principale (main)
+concurrency:
+  group: production
+
 on:
   push:
     branches:
       - master
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest 
-
+  deployment:
+    runs-on: ubuntu-latest
+    environment: production
     steps:
     - name: Checkout le code source
       uses: actions/checkout@v2
-      with:
-        node-version: 20
-
-    - name: Utiliser Node.js 16
-      uses: actions/setup-node@v2
-      with:
-        node-version: '20'
 
     - name: Copier les fichiers vers le répertoire du site web
       run: |
         rsync -av --delete-after ${{ github.workspace }}/ /var/www/portfolio/
       env:
-       SITE_PATH: /var/www/portfolio/
+        SITE_PATH: /var/www/portfolio/
 
     - name: Redémarrer Nginx
       run: |
