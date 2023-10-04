@@ -13,6 +13,8 @@ jobs:
     steps:
     - name: Checkout le code source
       uses: actions/checkout@v2
+      with:
+        node-version: 16
 
     - name: Utiliser Node.js 16
       uses: actions/setup-node@v2
