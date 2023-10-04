@@ -29,4 +29,4 @@ jobs:
 
     - name: Redémarrer Nginx
       run: |
-        sudo service nginx restart
+        sudo systemctl restart nginx
