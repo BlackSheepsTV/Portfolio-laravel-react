@@ -13,6 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     steps:
+
+    - name: Débogage
+      run: |
+        whoami  # Affiche l'utilisateur actuel
+        ls -l /var/www/portfolio  # Affiche les autorisations du répertoire 
+
     - name: Checkout le code source
       uses: actions/checkout@v3
 
