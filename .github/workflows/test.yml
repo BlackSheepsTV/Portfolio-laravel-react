@@ -13,24 +13,26 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     steps:
+      - name: Vérifier le contenu de github.workspace
+        run: ls -l ${{ github.workspace }}
 
-    - name: Débogage
-      run: |
-        whoami  # Affiche l'utilisateur actuel
-        ls -l /var/www/portfolio  # Affiche les autorisations du répertoire 
+      - name: Débogage
+        run: |
+          whoami  # Affiche l'utilisateur actuel
+          ls -l /var/www/portfolio  # Affiche les autorisations du répertoire 
 
-    - name: Checkout le code source
-      uses: actions/checkout@v3
+      - name: Checkout le code source
+        uses: actions/checkout@v3
 
-    - name: Vérifier l'acteur de l'action
-      run: echo "L'acteur de l'action est ${{ github.actor }}"
+      - name: Vérifier l'acteur de l'action
+        run: echo "L'acteur de l'action est ${{ github.actor }}"
 
-    - name: Copier les fichiers vers le répertoire du site web
-      run: |
-        rsync -av --delete-after ${{ github.workspace }}/ /var/www/portfolio/
-      env:
-        SITE_PATH: /var/www/portfolio/
+      - name: Copier les fichiers vers le répertoire du site web
+        run: |
+          rsync -av --delete-after ${{ github.workspace }}/ /var/www/portfolio/
+        env:
+          SITE_PATH: /var/www/portfolio/
 
-    - name: Redémarrer Nginx
-      run: |
-        sudo systemctl restart nginx
+      - name: Redémarrer Nginx
+        run: |
+          sudo systemctl restart nginx
