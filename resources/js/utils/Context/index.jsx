@@ -23,7 +23,6 @@ export const GlobalProvider = ({ children }) => {
     
     useEffect(() => {
         
-
         const storedTheme = localStorage.getItem('theme')
         const storedColor = localStorage.getItem('color')
 
