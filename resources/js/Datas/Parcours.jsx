@@ -1,44 +1,63 @@
+import { FaNetworkWired, FaComputer } from 'react-icons/fa6'
+import { IoGameController } from 'react-icons/io5'
+import { GiElectric } from 'react-icons/gi'
+import { BiRfid } from 'react-icons/bi'
+
 export const parcours = [
     {
         date: '07/2017 - 08/2021',
         entreprise: 'Metaleak',
-        objectif: '• Joueur semi professionel • Streamer ( twitch )'
+        objectif: '• Semi professional player (PUBG) • Streamer ( twitch )',
+        icon: <IoGameController />,
+        color: '#f43f5e'
     },
 
     {
         date: '06/2014 - 07/2014',
         entreprise: 'Hœnheim, 67800 RF Conception',
-        objectif: '• Création des boîtiers pour la réception des puces RFID'
+        objectif: '• Creation of boxes for receiving RFID chips',
+        icon: <BiRfid />,
+        color: '#38bdf8'
     },
 
     {
         date: '11/2013 – 12/2013',
         entreprise: 'Mundolsheim, 67450 OCI Informatique',
-        objectif: '• Préparation et réparation des ordinateurs dans un SAV '
+        objectif: '• Preparation and repair of computers in an after-sales service ',
+        icon: <FaComputer />,
+        color: '#6366f1'
     },
 
     {
         date: '06/2013 – 07/2013',
         entreprise: 'Schiltigheim, 67300 ECAM Strasbourg',
-        objectif: '• Administrateur réseaux • Gérer le réseau informatique de l’école '
+        objectif: '• Network administrator • Manage the school’s computer network ',
+        icon: <FaNetworkWired />,
+        color: '#2dd4bf'
     },
 
     {
         date: '11/2012 – 12/2012',
         entreprise: 'Schiltigheim, 67300 ECAM Strasbourg',
-        objectif: '• Administrateur réseaux • Gérer le réseau informatique de l’école '
+        objectif: '• Network administrator • Manage the school’s computer network ',
+        icon: <FaNetworkWired />,
+        color: '#2dd4bf'
     },
 
     {
         date: '06/2012 – 07/2012',
         entreprise: 'Schiltigheim, 67300 Lebas System',
-        objectif: '• Préparation des composants d’armoire • Monteur d’armoire électrique'
+        objectif: '• Preparation of cabinet components • Electrical cabinet assembler',
+        icon: <GiElectric />,
+        color: '#fde047'
     },
 
     {
         date: '01/2012 – 02/2012',
         entreprise: 'Schiltigheim, 67300 Lebas System',
-        objectif: '• Préparation des composants d’armoire • Monteur d’armoire électrique'
+        objectif: '• Preparation of cabinet components • Electrical cabinet assembler',
+        icon: <GiElectric />,
+        color: '#fde047'
     }
 ]
 
@@ -46,14 +65,14 @@ export const formations = [
     
     {
         date: '08/2021 – ',
-        ecole: 'Développeur Web chez OpenClassRooms',
-        etude: '• Développeur web • FullStack'
+        ecole: 'Developer Web at OpenClassRooms',
+        etude: '• Developer web • FullStack'
     },
 
     {
         date: '09/2016 – 07/2017',
         ecole: 'Mulhouse 68200 à Power House Gaming',
-        etude: '• Streameur • Joueur semi-professionnel • Casteur de Lan '
+        etude: '• Streamer • Semi professional player (PUBG) • Caster LAN '
     },
 
     {

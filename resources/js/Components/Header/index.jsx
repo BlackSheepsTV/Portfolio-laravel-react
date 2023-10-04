@@ -4,30 +4,86 @@ import { BsCalendar, BsClock, BsHouseDoor, BsBook, BsAward, BsQuestionCircle, Bs
 import styled from 'styled-components'
 import { Link } from "react-router-dom"
 import '../../utils/Styles/Header.scss'
-import { useTheme, useIsReady, useDate, useHeader } from '../../utils/Hooks'
+import { useTheme, useDate, useHeader } from '../../utils/Hooks'
 
 import Theme from './Theme'
+import {allTheme} from '../../utils/Styles/Theme'
 
-import { CSSTransition} from 'react-transition-group'
+import {VisuallyHidden, useSwitch} from "@nextui-org/react"
+import {MoonIcon} from "./MoonIcon"
+import {SunIcon} from "./SunIcon"
 
 const HeaderWrapper = styled.header`
   position: fixed;
   width: 100%;
   height: 55px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 0 10px;
   z-index: 100;
+
+  @media (max-width: 768px) {
+    justify-content: flex-end;
+  }
 `
 
 function Header() {
 
   const [showTheme, setShowTheme] = useState(false)
 
-  const { theme } = useTheme()
+  const isDark = localStorage.getItem('theme') === 'dark'
+  const [dark, setDark] = useState(isDark)
+
+  const { color, setTheme } = useTheme()
   const { currentDate } = useDate()
   const { user, skill, parcours, quizz, contact, sectionIntercept } = useHeader()
+
+  const toggleDarkMode = () => {
+
+    if(dark) {
+      setTheme('light')
+      localStorage.setItem('theme', 'light')
+      setDark(false)
+    } else {
+      setTheme('dark')
+      localStorage.setItem('theme', 'dark')
+      setDark(true)
+    }
+  }
+
+  const ThemeSwitch = (props) => {
+    const {
+      Component, 
+      slots, 
+      isSelected, 
+      getBaseProps, 
+      getInputProps, 
+      getWrapperProps
+    } = useSwitch(props);
+  
+    return (
+      <div className="flex flex-col gap-2">
+        <Component {...getBaseProps()}>
+            <VisuallyHidden>
+              <input {...getInputProps()} />
+            </VisuallyHidden>
+            <div
+              {...getWrapperProps()}
+              className={slots.wrapper({
+                class: [
+                  "w-8 h-8",
+                  "flex items-center justify-center",
+                  "rounded-lg bg-default-100 hover:bg-default-200",
+                ],
+              })}
+            >
+              {isSelected ? <SunIcon/> : <MoonIcon/>}
+            </div>
+        </Component>
+      </div>
+    )
+  }
 
   const scrollToSection = (elementRef) => {
     
@@ -39,7 +95,7 @@ function Header() {
 
   return (
     <HeaderWrapper >
-      <div className='date-wrapper-header'>
+      <div className='date-wrapper-header bg-slate-200 dark:bg-slate-800 dark:text-'>
           <div className='date-row'>
             <BsCalendar></BsCalendar>
             <span className='date'>{currentDate.toLocaleDateString()}</span>
@@ -77,15 +133,17 @@ function Header() {
          
           
           <li className='li-theme' onClick={() => setShowTheme(true)}>
-            <div className='choose-theme' style={{background: theme.bg}}></div>
+            <div className='choose-theme' style={{background: color && allTheme[color].bg }}></div>
             {showTheme && <Theme setShowTheme={setShowTheme} /> }
           </li>
+
+          <ThemeSwitch isSelected={dark} onClick={() => toggleDarkMode()}></ThemeSwitch>
 
         </ul>
           
       </nav>
     </HeaderWrapper>
-  );
+  )
 }
 
 export default Header;

@@ -92,10 +92,6 @@
         cursor: pointer;
         gap: 6px;
 
-        &:hover {
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-
         p {
             text-align: center;
         }
@@ -124,6 +120,17 @@
             }
         }
     }
+}
+
+.skill-svg {
+    svg{
+        width: 25px;
+        height: 25px;
+    }
+}
+
+.group[data-selected=true] .group-data-\[selected\=true\]\:text-default-foreground{
+    color: white;
 }
 
 @media (min-width: 1000px) {

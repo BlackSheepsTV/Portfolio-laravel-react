@@ -18,3 +18,12 @@ use App\Http\Controllers\Api\V1\ContactController;
 Route::group(['prefix' => 'v1'], function() {
     Route::post('contact', [ContactController::class, 'contact']);
 });
+
+Route::get('/storage/{filename}', function ($filename) {
+    $path = storage_path('app/public/' . $filename);
+    if (file_exists($path)) {
+        return response()->file($path);
+    } else {
+        return response('File not found', 404);
+    }
+});

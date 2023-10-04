@@ -1,103 +1,59 @@
-import { useState } from 'react';
-import { front, back, globalSkill } from '../../Datas/Skill'
+import { useEffect, useState } from 'react'
+import { skills } from '../../Datas/Skill'
 import '../../utils/Styles/Skill.scss'
-import { SlArrowRight, SlArrowLeft } from "react-icons/sl"
+import { useTheme } from '../../utils/Hooks'
+
+import {Tabs, Tab, Button} from "@nextui-org/react"
+import { motion } from "framer-motion"
+
+const fadeInAnimationVariants = {
+    initial: {
+      opacity: 0,
+      y: 100,
+    },
+    animate: (index) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.06 * index,
+      },
+    }),
+  };
 
 function Skill() {
 
-    const [ slide, setSlide ] = useState()
-    const [ showFront, setShowFront ] = useState(true)
-
-    function changeToBack() {
-        setSlide('mode-slide')
-        setTimeout(() => setShowFront(false), 600)
-    }
-
-    function changeToFront() {
-        setSlide('')
-        setTimeout(() => setShowFront(true), 600)
-    }
+    const { theme } = useTheme()
 
     return ( 
 
-        <div className="box-wrapper skills">
-
-            <div className={'skill-categories ' + slide}>
-
-{/*----------------------------------------------------------- LEFT SIDE ----------------------------------------------------------------------*/}
-            { showFront &&
-                <>
-                    <div className='skill'>
-                        <div className='skill__title'>
-                            <p>Front-end</p>
-                            <SlArrowRight style={{right: '6px'}} onClick={() => setShowFront(false)}></SlArrowRight>
-                        </div>
-
-                        <div className='skill__container'>
-                            {Object.entries(front)
-                            .sort((a, b) => a[0].localeCompare(b[0]))
-                            .map(([key, value], index) => (
-                                <div className='skill__row' key={index}>
-                                    {value !== null && (
-                                        <div style={{ color: value.color }}>
-                                            {value.svg}
-                                        </div>
-                                    )}
-                                    <p>{ key }</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>                     
-                </> 
-            }
-
- {/*----------------------------------------------------------- RIGHT SIDE ----------------------------------------------------------------------*/}
-            { !showFront &&                                    
-                <div className='skill'>         
-                    <div className='skill__title'>
-                        <p>Back-end</p>
-                        <SlArrowLeft style={{left: '6px'}} onClick={() => setShowFront(true)}></SlArrowLeft>
-                    </div>
-                    
-                    <div className='skill__container'>
-                        {Object.entries(back)
-                        .sort((a, b) => a[0].localeCompare(b[0]))
-                        .map(([key, value], index) => (
-                            <div className='skill__row' key={index}>
-                                {value !== null && (
-                                    <div style={{ color: value.color }}>
-                                        {value.svg}
-                                    </div>
-                                )}
-                                <p>{ key }</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>                                     
-            }
-            </div>
-
-            <div className="skill skill--global">
-
-                <div className='skill__title'>
-                    <p className='title'>Global</p>
-                </div>
-                
-                <div className='skill__container'>
-                    {globalSkill
-                    .sort((a, b) => a[0].localeCompare(b[0]))
-                    .map((skill, index) => (
-                        <div className='skill__row' key={index}>
-                            <p>{ skill }</p>
-                        </div>
-                    ))}
-                </div>
-                
-            </div>
+        <div className="w-full flex flex-wrap flex-col gap-4 items-center">
+            <Tabs className='flex justify-center' radius={'md'} aria-label="Tabs radius">
+                {Object.entries(skills).map(([key, value], index) => (
+                    <Tab className={`flex flex-wrap gap-2 justify-center ${'w-full sm:max-w-md'}`} key={index} title={key}>
+                        
+                        {Object.entries(value).map(([valueKey, value2], index) => (
+                            <motion.div 
+                            variants={fadeInAnimationVariants}
+                            initial="initial"
+                            whileInView="animate"
+                            viewport={{
+                            once: true,
+                            }}
+                            custom={index}
+                            key={index}
+                            >
+                                <Button className={theme === 'dark' && 'bg-slate-800'} disableAnimation radius="md" style={{cursor: 'default'}}>
+                                    {value2 && <div className='skill-svg' style={{ color: value2.color }}>
+                                        {value2.svg}
+                                    </div>}
+                                    {valueKey}
+                                </Button> 
+                            </motion.div>))}
+                    </Tab>
+                ))}
+            </Tabs>
         </div>
-
-      
-    );
+    )
 }
 
 export default Skill

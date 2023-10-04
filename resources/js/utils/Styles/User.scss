@@ -1,16 +1,46 @@
 // ---------------- PROFILE ---------------- //
 
-.profile-wrapper {
+.user {
+    width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    margin-bottom: 40px;
+    padding: 75px 20px;
+    gap: 20px; 
+
+    &__desc {
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+        
+
+        p:first-child {
+            border-bottom: 1px solid rgba( 255, 255, 255, 0.2);
+            padding-bottom: 14px;
+        }
+
+        span {
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+    }
+
+    &__button {
+        font-weight: bold;
+    }
 }
 
 .avatar {
     position: relative;
-    min-width: 150px;
-    min-height: 150px;
+    min-width: 120px;
+    min-height: 120px;
     border-radius: 50%;
+    border: 2px solid linear-gradient(135deg, #0038ff, #00a8ff);
     overflow: hidden;
     cursor: pointer;
     box-shadow: 0px 10px 20px rgba( 0, 0, 0, 1);
@@ -25,62 +55,6 @@
     }
 }
 
-// ---------------- USER DATA ---------------- //
-
-.userdata-wrapper {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-
-    .data-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-right: 25px;
-        margin-bottom: 20px;
-
-        .title-wrapper {
-
-            display: flex;
-            align-items: center;
-
-            .icon {
-                margin-bottom: 2px;
-                margin-right: 6px;
-            }
-
-            .title {
-                font-size: 1.2rem;
-                font-weight: bold;
-                margin-bottom: 5px;
-                white-space: nowrap;
-            }
-
-        }
-
-        .data-row {
-
-            display: flex;
-            align-items: center;
-            
-            .data {
-                color: rgba( white, 0.7);
-                font-size: 0.9rem;
-                margin-right: 8px;
-            }
-
-            .eye {
-                color: rgba( 255, 255, 255, 0.8);
-                cursor: pointer;
-            }
-        }
-
-        
-    }
-}
-
 .confidentiel {
     position: absolute;
     bottom: 4px;
@@ -90,44 +64,12 @@
     color: rgba( 255, 255, 255, 0.4);
 }
 
-.user {
-    width: 100%;
-    height: 380px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 40px;
-    padding: 0 10%;
-    background: rgba( 0, 0, 0, 0.4); 
-
-    &__desc {
-        max-width: 400px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-}
-
-@media (min-width: 650px) {
-
-    .userdata-wrapper {
-        max-width: 355px;
-    }
-}
-
-
 @media (min-width: 1000px) {
 
-    $heightProfile: 200px;
+    $heightProfile: 120px;
 
     .avatar {
         width: $heightProfile;
-        height: $heightProfile;
-        margin-right: 100px;
-    }
-
-    .userdata-wrapper {
         height: $heightProfile;
     }
 

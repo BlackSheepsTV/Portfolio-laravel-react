@@ -1,12 +1,15 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import MainStyle from '../../utils/Styles/Page'
+import SectionDivider from '../../Components/Divider/sectionDivider'
 import User from '../../Components/User'
 import Skill from '../../Components/Skill'
 import Parcours from '../../Components/Parcours'
 import Formation from '../../Components/Formation'
 import Quizz from '../../Components/Quizz'
 import Footer from '../../Components/Footer'
+
+import VideoPlayer from '../../Components/Youtube/Youtube.jsx'
 
 import { useHeader } from '../../utils/Hooks'
 
@@ -40,7 +43,7 @@ const SectionRow = styled.div`
 `
 
 function Home() {
-  
+
   const { user, skill , parcours, quizz , contact, setSectionIntercept } = useHeader()
   const [allRef, setAllRef] = useState([
     user,
@@ -54,13 +57,14 @@ function Home() {
     const options = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.95
+      threshold: 0.70
     }
   
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           setSectionIntercept(entry.target)
+          console.log(entry.target)
         }
       })
     }, options)
@@ -78,39 +82,50 @@ function Home() {
     <MainStyle>
       <div className='page-wrapper'>
         <User user={user}/>
+        <SectionDivider />
         
         <div className='section-wrapper easy' ref={skill}>
           <div className='section-title'>
-            <h2>Skills</h2>
+            <h2>My Skills</h2>
           </div>
           
           <Skill />
         </div>
 
-        <SectionRow>
-          <div className='section-flex' ref={parcours}>
-            <div className='section-title'>
-              <h2>Career</h2>
-            </div>
-
-            <Parcours />
-            
+        
+        <div className='section-wrapper' ref={parcours}>
+          <div className='section-title'>
+            <h2>My Career</h2>
           </div>
+
+          <Parcours />
           
-          <div className='section-flex'>
-            <div className='section-title'>
-              <h2>Training</h2>
-            </div>
-
-            <Formation />
-            
+        </div>
+        
+        <div className='section-wrapper'>
+          <div className='section-title'>
+            <h2>My Training</h2>
           </div>
-        </SectionRow>
+
+          <Formation />
+          
+        </div>
+        
         
         <div className='section-quizz' ref={quizz}>
           <h2>Quizz</h2>
           <Quizz />
         </div>
+
+        <div className='section-wrapper'>
+          <div className='section-title flex-col'>
+            <h2>My extra</h2>
+            <p className='text-center'>I have make some montage video, here you can watch one</p>
+          </div>
+          <VideoPlayer />
+        </div>
+        
+
       </div>                        
     </MainStyle>
     <Footer contact={contact}/>

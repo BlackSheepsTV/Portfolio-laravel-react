@@ -1,13 +1,15 @@
 @use './variables' as v;
 
 .date-wrapper-header {
+    position: absolute;
+    top: 10px;
+    left: 10px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     padding: 0 6px;
     border-radius: 8px;
-    background: rgba(#0b0b0f, 0.6);
     gap: 10px;
 
     .date-row {
@@ -16,13 +18,14 @@
         align-items: center;
 
         svg {
-            width: 20px;
-            height: 20px;
+            width: 16px;
+            height: 16px;
             margin-right: 6px;
         }
 
         .date {
             font-weight: bold;
+            font-size: 14px;
         }
     }
 }
@@ -63,6 +66,10 @@ ul {
         svg {
             width: 20px;
             height: 20px;
+
+            &:hover {
+                background-color: rgba(#0b0b0f, 0.4);
+            }
         }
        
         a {
@@ -92,10 +99,4 @@ ul {
     display: flex;
     justify-content: center;
     border-radius: 50%;
-}
-
-
-@media (min-width: 700px) {
-
-    
 }
