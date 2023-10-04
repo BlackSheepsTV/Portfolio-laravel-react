@@ -2,8 +2,8 @@ import { useContext } from 'react'
 import { GlobalContext } from '../Context'
 
 export function useTheme() {
-    const { theme, toggleTheme } = useContext(GlobalContext)
-    return { theme, toggleTheme }
+    const { theme, setTheme, color, setColor } = useContext(GlobalContext)
+    return { theme, setTheme, color , setColor }
 }
 
 export function useIsReady() {

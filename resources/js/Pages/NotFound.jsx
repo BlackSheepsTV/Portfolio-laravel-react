@@ -1,19 +1,38 @@
-import PageStyle from '../utils/Styles/Page'
+import MainStyle from '../utils/Styles/Page'
 import '../utils/Styles/NotFound.scss'
+import {Button} from "@nextui-org/react"
+import {allTheme} from '../utils/Styles/Theme'
+import { useTheme } from '../utils/Hooks'
+
 
 function NotFound() {
-    return (
-      <PageStyle>
-        <div className='notfound-wrapper'>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-emoji-dizzy-fill" viewBox="0 0 16 16">
-          <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zM4.146 5.146a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 1 1 .708.708l-.647.646.647.646a.5.5 0 1 1-.708.708L5.5 7.207l-.646.647a.5.5 0 1 1-.708-.708l.647-.646-.647-.646a.5.5 0 0 1 0-.708zm5 0a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708.708l-.647.646.647.646a.5.5 0 0 1-.708.708l-.646-.647-.646.647a.5.5 0 1 1-.708-.708l.647-.646-.647-.646a.5.5 0 0 1 0-.708zM8 13a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/>
-          </svg>
-          <h1>Oups.. Cette page n'existe pas !</h1>
-        </div>
-        
-      </PageStyle>
-    );
+
+  const { color } = useTheme()
+
+  const gradientStyle = {
+    backgroundImage: allTheme[color].bg,
+    backgroundClip: 'text',
+    color: 'transparent',
+    fontWeight: 'bold',
+    WebkitBackgroundClip: 'text'
   }
+  return (
+    <MainStyle>
+      <div className="w-full flex flex-col justify-center text-center">
+        <p className="text-2xl font-semibold" style={gradientStyle}>404</p>
+        <h1 className="mt-4 text-3xl font-bold tracking-tight dark:text-white text-gray-900 sm:text-5xl">Page not found</h1>
+        <p className="mt-6 text-base leading-7 dark:text-slate-400 text-gray-600">Sorry, we couldn’t find the page you’re looking for.</p>
+        <div className="mt-10 flex items-center justify-center gap-x-6">
+          <a href="/">
+          <Button className='button-bg' radius="md">
+            Go back home
+          </Button>
+          </a>
+        </div>
+      </div>
+    </MainStyle>
+  );
+}
   
-  export default NotFound;
+export default NotFound
   

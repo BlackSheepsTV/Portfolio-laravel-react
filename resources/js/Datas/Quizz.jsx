@@ -1,37 +1,37 @@
 export const QuizzQuestions = [
     {
         id: '1',
-        question: 'Quel est mon prénom ?',
+        question: 'What is my first name ?',
         choice: ['Richard', 'Anthony', 'Gaëtan'],
         response: 'Gaëtan'
     },
 
     {
         id: '2',
-        question: 'Quelle est mon âge ?',
+        question: 'What is my age ?',
         choice: ['27', '28', '35'],
         response: '27'
     },
 
     {
         id: '3',
-        question: 'Je suis un développeur ...',
+        question: "I'm a developper ...",
         choice: ['Front', 'Back', 'FullStack'],
         response: 'FullStack'
     },
 
     {
         id: '4',
-        question: 'Combien ai je de compétences ?',
-        choice: ['12', '15', '17'],
-        response: '15'
+        question: 'How many skill i have ?',
+        choice: ['15', '18', '22'],
+        response: '18'
     },
 
     {
         id: '5',
-        question: 'Quelle est la couleur du thème par défault ?',
-        choice: ['Bleu/Rouge', 'Bleu', 'Bleu/Vert'],
-        response: 'Bleu'
+        question: 'What is the default theme color ?',
+        choice: ['Dark', 'Blue', 'Light'],
+        response: 'Dark'
     },
 
 ]

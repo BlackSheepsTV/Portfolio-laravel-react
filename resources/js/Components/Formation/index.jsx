@@ -18,19 +18,17 @@ function Formation() {
     }
 
     return (
-        <div className="box-wrapper box-parcours-wrapper">
+        <div>
             {formations.map((formation, index) => (
                 <div className='parcour-row' key={index}>
                     <div className='date-wrapper'>
                         <span className='date'>{formation.date} {index === 0 ?  compareDate() : '' }</span> <span className=''>{formation.ecole}</span>
                     </div>
-                    <span className='objectif'>{formation.etude}</span>
+                    <span className='objectif text-slate-400 dark:text-slate-500'>{formation.etude}</span>
                 </div>
             ))}
         </div>
-
-        
-    );
+    )
 }
 
 export default Formation

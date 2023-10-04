@@ -1,6 +1,6 @@
 export const inputs = [
     {
-        label: 'Prénom',
+        label: 'First name',
         name: 'firstname',
         type: 'text',
         placeholder: 'Gaëtan',
@@ -10,7 +10,7 @@ export const inputs = [
     },
 
     {
-        label: 'Nom',
+        label: 'Name',
         name: 'name',
         type: 'text',
         placeholder: 'ETAME',
@@ -20,7 +20,7 @@ export const inputs = [
     },
 
     {
-        label: 'Entreprise',
+        label: 'Company',
         name: 'entreprise',
         type: 'text',
         placeholder: 'Facebook',
@@ -33,14 +33,14 @@ export const inputs = [
         label: 'Email',
         name: 'email',
         type: 'text',
-        placeholder: 'mon.email@gmail.com',
+        placeholder: 'your.email@gmail.com',
         required: true,
         class: 'medium-input',
         regex: '^[\\w\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$'
     },
 
     {
-        label: 'Téléphone',
+        label: 'Phone number',
         name: 'phone',
         type: 'text',
         placeholder: '0623481278',
