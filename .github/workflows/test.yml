@@ -14,7 +14,7 @@ jobs:
     environment: production
     steps:
     - name: Checkout le code source
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Copier les fichiers vers le répertoire du site web
       run: |
