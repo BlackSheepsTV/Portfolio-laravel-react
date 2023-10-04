@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from './reportWebVitals'
+import {NextUIProvider} from '@nextui-org/react'
 
 import './utils/Styles/index.scss'
 import GlobalStyle from './utils/Styles/GlobalStyles'
@@ -11,28 +12,24 @@ import Header from './Components/Header'
 import Home from './Pages/Home';
 import NotFound from './Pages/NotFound';
 
-
-
 const root = ReactDOM.createRoot(document.getElementById('app'));
 root.render(
   
   <React.StrictMode>
 
     <Router>
-
-      <GlobalProvider >
-        <GlobalStyle />
-        <Header />
-
-        
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        
-        
-
-      </GlobalProvider>
+      <NextUIProvider>
+        <GlobalProvider >
+          <GlobalStyle />
+          <Header />
+          
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          
+        </GlobalProvider>
+      </NextUIProvider>
     </Router>
   
   </React.StrictMode>
