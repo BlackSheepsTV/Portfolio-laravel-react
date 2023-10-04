@@ -33,7 +33,6 @@ function Header() {
   const [showTheme, setShowTheme] = useState(false)
 
   const isDark = localStorage.getItem('theme') === 'dark'
-  const [dark, setDark] = useState(isDark)
 
   const { color, setTheme } = useTheme()
   const { currentDate } = useDate()
@@ -41,7 +40,7 @@ function Header() {
 
   const toggleDarkMode = () => {
 
-    if(dark) {
+    if(isDark) {
       setTheme('light')
       localStorage.setItem('theme', 'light')
       setDark(false)
@@ -137,7 +136,7 @@ function Header() {
             {showTheme && <Theme setShowTheme={setShowTheme} /> }
           </li>
 
-          <ThemeSwitch isSelected={dark} onClick={() => toggleDarkMode()}></ThemeSwitch>
+          <ThemeSwitch isSelected={isDark} onClick={() => toggleDarkMode()}></ThemeSwitch>
 
         </ul>
           
