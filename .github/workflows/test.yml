@@ -4,12 +4,12 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
-  
+
 jobs:
-  run_pull:
-    name: run pull
+  deployment:
     runs-on: ubuntu-latest
+    environment: production
+    concurrency: production
     
     steps:
     - name: install ssh keys

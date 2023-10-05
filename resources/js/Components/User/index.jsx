@@ -1,5 +1,5 @@
 import '../../utils/Styles/User.scss'
-import Photo from '../../Assets/Gaetan.jpg'
+import Photo from '../../Assets/Gaetan.avif'
 import { allTheme } from '../../utils/Styles/Theme'
 import { useTheme } from '../../utils/Hooks'
 import { Button } from "@nextui-org/react"
@@ -53,11 +53,11 @@ function User({user}) {
                     </Button>
                 </a>
 
-                <a href='https://github.com/BlackSheepsTV' target='_blank' className='w-[40px] h-[40px] flex items-center justify-center rounded-xl bg-white hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700'>
+                <a href='https://github.com/BlackSheepsTV' target='_blank' className='w-[40px] h-[40px] flex items-center justify-center rounded-xl bg-white hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700' aria-label="My github">
                     <BsGithub className='w-[25px] h-[25px]'></BsGithub>
                 </a>
             
-                <a href='https://www.linkedin.com/in/ga%C3%ABtan-etame/'  target='_blank' className='w-[40px] h-[40px] flex items-center justify-center rounded-xl bg-white hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700'>
+                <a href='https://www.linkedin.com/in/ga%C3%ABtan-etame/'  target='_blank' className='w-[40px] h-[40px] flex items-center justify-center rounded-xl bg-white hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700' aria-label="my linkedin">
                     <BsLinkedin className='w-[25px] h-[25px]'></BsLinkedin>
                 </a>
             

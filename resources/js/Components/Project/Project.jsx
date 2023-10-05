@@ -28,11 +28,11 @@ export default function Parcours() {
     return (
         <>
         <div className='flex justify-center items-center gap-4'>
-            <Button size='sm' className='' color="primary" onClick={showPreviousCard} style={{paddingLeft: '0px', paddingRight: '0px', minWidth: 'auto', height: 'auto'}}>
+            <Button aria-label="previous" size='sm' className='' color="primary" onClick={showPreviousCard} style={{paddingLeft: '0px', paddingRight: '0px', minWidth: 'auto', height: 'auto'}}>
                 <MdNavigateBefore className='w-[25px] h-[25px]' />
             </Button>
             <p className='font-bold'>{cardToShow + 1}</p>
-            <Button size='sm' color="primary" onClick={showNextCard} style={{paddingLeft: '0px', paddingRight: '0px', minWidth: 'auto', height: 'auto'}}>
+            <Button aria-label="next" size='sm' color="primary" onClick={showNextCard} style={{paddingLeft: '0px', paddingRight: '0px', minWidth: 'auto', height: 'auto'}}>
                 <MdNavigateNext className='w-[25px] h-[25px]' />
             </Button>
         </div>

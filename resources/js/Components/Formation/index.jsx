@@ -24,7 +24,7 @@ function Formation() {
                     <div className='date-wrapper'>
                         <span className='date'>{formation.date} {index === 0 ?  compareDate() : '' }</span> <span className=''>{formation.ecole}</span>
                     </div>
-                    <span className='objectif text-slate-400 dark:text-slate-500'>{formation.etude}</span>
+                    <span className='objectif text-slate-400 dark:text-slate-400'>{formation.etude}</span>
                 </div>
             ))}
         </div>

@@ -65,7 +65,7 @@ function Header() {
       <div className="flex flex-col gap-2">
         <Component {...getBaseProps()}>
             <VisuallyHidden>
-              <input {...getInputProps()} />
+              <input {...getInputProps()} aria-label="theme mode"/>
             </VisuallyHidden>
             <div
               {...getWrapperProps()}
@@ -108,38 +108,33 @@ function Header() {
 
       <nav>
         <ul>
-          <li onClick={() => {scrollToSection(user)}} style={user.current === sectionIntercept || !sectionIntercept ? {background: 'rgba(0,0,0, 0.6)'} : {}}><Link to="/">
+          <li onClick={() => {scrollToSection(user)}} style={user.current === sectionIntercept || !sectionIntercept ? {background: 'rgba(0,0,0, 0.6)'} : {}}><Link to="/" aria-label="home">
             <BsHouseDoor></BsHouseDoor>
           </Link></li>
           
-          <li onClick={() => scrollToSection(skill)} style={skill.current === sectionIntercept ? {background: 'rgba(0,0,0, 0.6)'} : {}}><Link to="/">
+          <li onClick={() => scrollToSection(skill)} style={skill.current === sectionIntercept ? {background: 'rgba(0,0,0, 0.6)'} : {}}>
             <BsBook></BsBook>
-          </Link></li>
+          </li>
 
-          <li onClick={() => scrollToSection(parcours)} style={parcours.current === sectionIntercept ? {background: 'rgba(0,0,0, 0.6)'} : {}}><Link to="/">
+          <li onClick={() => scrollToSection(parcours)} style={parcours.current === sectionIntercept ? {background: 'rgba(0,0,0, 0.6)'} : {}}>
             <BsAward></BsAward>
-          </Link></li>
+          </li>
 
-          <li onClick={() => scrollToSection(quizz)} style={quizz.current === sectionIntercept ? {background: 'rgba(0,0,0, 0.6)'} : {}}><Link to="/">
+          <li onClick={() => scrollToSection(quizz)} style={quizz.current === sectionIntercept ? {background: 'rgba(0,0,0, 0.6)'} : {}}>
             <BsQuestionCircle></BsQuestionCircle>
-          </Link></li>
+          </li>
 
-          <li onClick={() => scrollToSection(contact)} style={contact.current === sectionIntercept ? {background: 'rgba(0,0,0, 0.6)'} : {}}><Link to="/">
+          <li onClick={() => scrollToSection(contact)} style={contact.current === sectionIntercept ? {background: 'rgba(0,0,0, 0.6)'} : {}}>
             <BsEnvelope></BsEnvelope>
-          </Link></li>
-
-         
-         
+          </li>
           
           <li className='li-theme' onClick={() => setShowTheme(true)}>
             <div className='choose-theme' style={{background: color && allTheme[color].bg }}></div>
             {showTheme && <Theme setShowTheme={setShowTheme} /> }
           </li>
-
-          <ThemeSwitch isSelected={isDark} onClick={() => toggleDarkMode()}></ThemeSwitch>
-
         </ul>
-          
+
+        <ThemeSwitch isSelected={isDark} onClick={() => toggleDarkMode()}></ThemeSwitch>
       </nav>
     </HeaderWrapper>
   )

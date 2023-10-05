@@ -1,5 +1,5 @@
-import Kasa from '../Assets/Kasa.png'
-import LolCalculator from '../Assets/lol_calculator.png'
+import Kasa from '../Assets/Kasa.avif'
+import LolCalculator from '../Assets/lol_calculator.avif'
 
 export const projects = [
     {name: 'Project Kasa', company: 'OpenClassrooms', techno: 'Frontend React', desc: 'This is a project i made during my training. It\'s a website for searching an appartment.', img: Kasa},
