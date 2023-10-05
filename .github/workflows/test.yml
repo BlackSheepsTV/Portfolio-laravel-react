@@ -1,8 +1,5 @@
 name: Deployment
 
-concurrency:
-  group: production
-
 on:
   push:
     branches:
@@ -13,17 +10,18 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     steps:
-      - name: Checkout le code source
-        uses: actions/checkout@v3
-
-      - name: Vérifier l'acteur de l'action
-        run: echo "L'acteur de l'action est ${{ github.actor }}"
-
-      - name: pull
+      - name: install ssh keys
+      # check this thread to understand why its needed:
+      # https://stackoverflow.com/a/70447517
         run: |
-          sudo -u git pull origin
-        env:
-          SITE_PATH: /var/www/portfolio/
+          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
+        
+      - name: connect and pull
+        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && git checkout ${{ secrets.MAIN_BRANCH }} && git pull && exit"
+      - name: cleanup
+        run: rm -rf ~/.ssh
 
       - name: Redémarrer Nginx
         run: |
