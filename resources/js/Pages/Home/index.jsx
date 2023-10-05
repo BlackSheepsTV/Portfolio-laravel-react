@@ -64,7 +64,6 @@ function Home() {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           setSectionIntercept(entry.target)
-          console.log(entry.target)
         }
       })
     }, options)
