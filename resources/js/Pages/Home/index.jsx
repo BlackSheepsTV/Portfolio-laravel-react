@@ -120,7 +120,7 @@ function Home() {
 
         <div className='section-wrapper'>
           <div className='section-title'>
-            <h2>My Project</h2>
+            <h2>My Projects</h2>
           </div>
           <Project />           
         </div>
