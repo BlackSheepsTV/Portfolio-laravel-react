@@ -7,9 +7,11 @@ import Skill from '../../Components/Skill'
 import Parcours from '../../Components/Parcours'
 import Formation from '../../Components/Formation'
 import Quizz from '../../Components/Quizz'
+import Project from '../../Components/Project/Project.jsx'
+import VideoPlayer from '../../Components/Youtube/Youtube.jsx'
 import Footer from '../../Components/Footer'
 
-import VideoPlayer from '../../Components/Youtube/Youtube.jsx'
+
 
 import { useHeader } from '../../utils/Hooks'
 
@@ -106,14 +108,23 @@ function Home() {
             <h2>My Training</h2>
           </div>
 
-          <Formation />
-          
+          <Formation />          
         </div>
         
         <div className='section-quizz' ref={quizz}>
           <h2>Quizz</h2>
           <Quizz />
         </div>
+
+        <SectionDivider />
+
+        <div className='section-wrapper'>
+          <div className='section-title'>
+            <h2>My Project</h2>
+          </div>
+          <Project />           
+        </div>
+        
 
         <div className='section-wrapper'>
           <div className='section-title flex-col'>
