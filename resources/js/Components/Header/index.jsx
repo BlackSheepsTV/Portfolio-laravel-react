@@ -43,11 +43,9 @@ function Header() {
     if(isDark) {
       setTheme('light')
       localStorage.setItem('theme', 'light')
-      setDark(false)
     } else {
       setTheme('dark')
       localStorage.setItem('theme', 'dark')
-      setDark(true)
     }
   }
 
