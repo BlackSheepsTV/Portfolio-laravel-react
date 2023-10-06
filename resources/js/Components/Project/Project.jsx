@@ -48,7 +48,7 @@ export default function Parcours() {
                     <CardBody className="flex items-center overflow-visible py-2 gap-4">
                         {project.img && <Image
                         alt="Card background"
-                        className="object-cover rounded-xl"
+                        className="w-full h-auto object-cover rounded-xl"
                         src={`/storage/${project.img}`}
                         width={720}
                         />}
