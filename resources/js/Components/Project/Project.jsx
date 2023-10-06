@@ -54,7 +54,7 @@ export default function Parcours() {
                         />}
 
                         <p className='w-full text-sm' dangerouslySetInnerHTML={{ __html: project.desc.replace(/\n/g, '<br>') }}></p>
-                        <p>Techno :</p>
+                        
                         <div className='flex justify-center items-center flex-wrap gap-4'>
                             {project.techno.map((techno, index) => (
                                 <Chip className='dark:bg-slate-700' key={index}>{ techno }</Chip>
