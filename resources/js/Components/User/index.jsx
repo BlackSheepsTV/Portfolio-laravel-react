@@ -1,5 +1,4 @@
 import '../../utils/Styles/User.scss'
-import Photo from '../../Assets/Gaetan.avif'
 import { allTheme } from '../../utils/Styles/Theme'
 import { useTheme } from '../../utils/Hooks'
 import { Button } from "@nextui-org/react"
@@ -38,7 +37,7 @@ function User({user}) {
     <div className='user'>
         <motion.div initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}  className='w-full flex flex-col items-center gap-6' ref={user}>
             <div className='avatar'>
-                <img src={Photo} alt='Gaetan'/>
+                <img src={`/storage/Gaetan.avif`} alt='Gaetan'/>
             </div>
 
             <div className='user__desc'>
