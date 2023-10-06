@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import '../../utils/Styles/Parcours.scss'
-import { Card, CardHeader, CardBody, Image } from "@nextui-org/react"
+import { Card, CardHeader, CardBody, Image, Chip } from "@nextui-org/react"
 import { projects } from '../../Datas/Project'
 import {Button} from "@nextui-org/react"
 import {MdNavigateBefore, MdNavigateNext } from 'react-icons/md'
+
 
 export default function Parcours() {
 
@@ -40,20 +41,26 @@ export default function Parcours() {
             cardToShow === index && (
                 <Card className="py-4 bg-gray-100 dark:bg-slate-800 " key={index}>
                     <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+                        <h4 className="font-bold text-large">{project.title}</h4>
                         <p className="text-tiny uppercase font-bold">{project.name}</p>
                         <small className="text-default-500">{project.company}</small>
-                        <h4 className="font-bold text-large">{project.techno}</h4>
                     </CardHeader>
                     <CardBody className="flex items-center overflow-visible py-2 gap-4">
-                        <Image
+                        {project.img && <Image
                         alt="Card background"
                         className="object-cover rounded-xl"
-                        src={project.img}
+                        src={`/storage/${project.img}`}
                         width={720}
-                        />
+                        />}
 
                         <p className='w-full text-sm' dangerouslySetInnerHTML={{ __html: project.desc.replace(/\n/g, '<br>') }}></p>
-
+                        <p>Techno :</p>
+                        <div className='flex justify-center items-center flex-wrap gap-4'>
+                            {project.techno.map((techno, index) => (
+                                <Chip className='dark:bg-slate-700' key={index}>{ techno }</Chip>
+                            ))}
+                        </div>
+                        
                     </CardBody>
                 </Card>
             )
