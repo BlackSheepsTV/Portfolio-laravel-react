@@ -86,7 +86,7 @@ function Footer({contact}) {
                 </div>
                 </CSSTransition>
                
-                <form className='form-wrapper' onSubmit={handleSubmit}>
+                <form className='form-wrapper' onSubmit={handleSubmit} aria-label='contact form'>
 
                 {inputs.map((input, index) => (
                     <div className={'input-row ' + input.class} key={index}>
