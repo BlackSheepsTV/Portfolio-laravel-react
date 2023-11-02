@@ -4,6 +4,7 @@ import { useTheme } from '../../utils/Hooks'
 import { Button } from "@nextui-org/react"
 import { FiDownload } from 'react-icons/fi'
 import { BsLinkedin, BsGithub } from 'react-icons/bs'
+import Gaetan from './gaetan_portrait_transparent.png'
 
 import { motion } from "framer-motion"
 
@@ -37,12 +38,13 @@ function User({user}) {
     <div className='user'>
         <motion.div initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}  className='w-full flex flex-col items-center gap-6' ref={user}>
             <div className='avatar'>
-                <img src={`/storage/Gaetan_300.avif`} alt='Gaetan'/>
+                <img src='/storage/Gaetan_300.avif' alt='Gaetan'/>
             </div>
 
             <div className='user__desc'>
                 <p className='text-black dark:text-white'>Hello, I'm <span style={gradientStyle}>Gaëtan ETAME</span>, <span style={gradientStyle}>{age}</span> years old, a <span style={gradientStyle}>fullstack</span> web developpeur with 2 years of experience. </p>
                 <p className='text-black dark:text-white'>My goal is to help you to have the <span style={gradientStyle}>best website</span> for your company and with the <span style={gradientStyle}>best experience</span> for all the user.</p>
+                <p>I was playing at <span style={gradientStyle}>professional</span> level and <span style={gradientStyle}>leader</span> in game (PUBG). I'm always searching to be the best on what i'm doing.</p>
             </div>
 
             <div className='flex items-center gap-2'>

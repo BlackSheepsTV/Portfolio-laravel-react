@@ -1,4 +1,4 @@
-import { FaCss3Alt, FaHtml5, FaReact, FaVuejs, FaNodeJs, FaPhp, FaLaravel } from "react-icons/fa"
+import { FaCss3Alt, FaHtml5, FaReact, FaVuejs, FaNodeJs, FaPhp, FaLaravel, FaAws } from "react-icons/fa"
 import { SiMongodb, SiJavascript } from "react-icons/si"
 import { GrMysql } from "react-icons/gr"
 import { BiLogoTailwindCss } from "react-icons/bi"
@@ -46,6 +46,7 @@ export const skills = {
         'SQL / MySQL': {svg: <GrMysql />, color: '#0066cc'},
         'MongoDb': {svg: <SiMongodb />, color: '#33cc33'},
         'LARAVEL': {svg: <FaLaravel />, color: '#ff3300'},
+        'AWS': {svg: <FaAws />},
         'API REST': '',
     },
 
@@ -56,5 +57,6 @@ export const skills = {
         'Agile': '',
         'Kanban': '',
         'SEO': '',
+        'CI/CD': ''
     }
 }
