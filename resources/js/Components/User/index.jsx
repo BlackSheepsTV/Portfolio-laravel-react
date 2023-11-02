@@ -4,7 +4,6 @@ import { useTheme } from '../../utils/Hooks'
 import { Button } from "@nextui-org/react"
 import { FiDownload } from 'react-icons/fi'
 import { BsLinkedin, BsGithub } from 'react-icons/bs'
-import Gaetan from './gaetan_portrait_transparent.png'
 
 import { motion } from "framer-motion"
 
