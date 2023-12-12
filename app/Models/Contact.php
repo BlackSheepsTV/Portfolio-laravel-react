@@ -43,7 +43,7 @@ class Contact extends Model
   
         static::created(function ($item) {
                 
-            $adminEmail = "contact@portfolio-etame-gaetan.fr";
+            $adminEmail = env('ADMIN_EMAIL'); //your-email@hotmail.fr
             Mail::to($adminEmail)->send(new ContactMail($item));
         });
     }
