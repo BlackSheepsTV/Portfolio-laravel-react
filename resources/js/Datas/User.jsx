@@ -14,7 +14,7 @@ export const userInfo = [
 
     {   
         title: 'Age :',
-        data: '27'
+        data: '28'
     },
 
     {   

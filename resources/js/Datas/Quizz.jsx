@@ -10,7 +10,7 @@ export const QuizzQuestions = [
         id: '2',
         question: 'What is my age ?',
         choice: ['27', '28', '35'],
-        response: '27'
+        response: '28'
     },
 
     {
