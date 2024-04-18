@@ -23,8 +23,8 @@ export const QuizzQuestions = [
     {
         id: '4',
         question: 'How many skill i have ?',
-        choice: ['15', '18', '22'],
-        response: '18'
+        choice: ['20', '23', '25'],
+        response: '23'
     },
 
     {
