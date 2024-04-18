@@ -44,7 +44,7 @@ export default function Parcours() {
                         <h4 className="font-bold text-large">{project.title}</h4>
                         <p className="text-tiny uppercase font-bold">{project.name}</p>
                         <small className="text-default-500">{project.company}</small>
-                        {project.link && <a className='hover:underline hover:text-blue-400' href={project.link} target='_blank'>{project.linkName}</a>}
+                        {project.link && <a className='text-blue-400 hover:underline hover:text-blue-500' href={project.link} target='_blank'>{project.linkName}</a>}
                     </CardHeader>
                     <CardBody className="flex items-center overflow-visible py-2 gap-4">
                         {project.img && <Image
