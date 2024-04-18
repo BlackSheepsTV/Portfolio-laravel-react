@@ -39,11 +39,12 @@ export default function Parcours() {
         </div>
         {projects.map((project, index) => (
             cardToShow === index && (
-                <Card className="py-4 bg-gray-100 dark:bg-slate-800 " key={index}>
+                <Card className="w-full max-w-[900px] py-4 bg-gray-100 dark:bg-slate-800 " key={index}>
                     <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
                         <h4 className="font-bold text-large">{project.title}</h4>
                         <p className="text-tiny uppercase font-bold">{project.name}</p>
                         <small className="text-default-500">{project.company}</small>
+                        {project.link && <a className='hover:underline hover:text-blue-400' href={project.link} target='_blank'>{project.linkName}</a>}
                     </CardHeader>
                     <CardBody className="flex items-center overflow-visible py-2 gap-4">
                         {project.img && <Image

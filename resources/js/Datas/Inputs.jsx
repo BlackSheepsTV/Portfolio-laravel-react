@@ -36,7 +36,7 @@ export const inputs = [
         placeholder: 'your.email@gmail.com',
         required: true,
         class: 'medium-input',
-        regex: '^[\\w\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$'
+        regex: '^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$'
     },
 
     {

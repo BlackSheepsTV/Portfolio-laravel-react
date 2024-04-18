@@ -41,7 +41,7 @@ function User({user}) {
             </div>
 
             <div className='user__desc'>
-                <p className='text-black dark:text-white'>Hello, I'm <span style={gradientStyle}>Gaëtan ETAME</span>, <span style={gradientStyle}>{age}</span> years old, a <span style={gradientStyle}>fullstack</span> web developpeur with 2 years of experience. </p>
+                <p className='text-black dark:text-white'>Hello, I'm <span style={gradientStyle}>Gaëtan ETAME</span>, <span style={gradientStyle}>{age}</span> years old, a <span style={gradientStyle}>fullstack</span> web developer with 2 years of experience. </p>
                 <p className='text-black dark:text-white'>My goal is to help you to have the <span style={gradientStyle}>best website</span> for your company and with the <span style={gradientStyle}>best experience</span> for all the user.</p>
                 <p>I was playing at <span style={gradientStyle}>professional</span> level and <span style={gradientStyle}>leader</span> in game (PUBG). I'm always searching to be the best on what i'm doing.</p>
             </div>
@@ -59,6 +59,10 @@ function User({user}) {
             
                 <a href='https://www.linkedin.com/in/ga%C3%ABtan-etame/'  target='_blank' className='w-[40px] h-[40px] flex items-center justify-center rounded-xl bg-white hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700' aria-label="my linkedin">
                     <BsLinkedin className='w-[25px] h-[25px]'></BsLinkedin>
+                </a>
+
+                <a href='https://outdamage.gg/' target='_blank' className='w-[40px] h-[40px] flex items-center justify-center rounded-xl bg-white hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700' aria-label="outdamage.gg">
+                    <img src='/storage/outdamage_logo_100.avif' className='w-[25px] h-[25px]'></img>
                 </a>
             
             </div>
