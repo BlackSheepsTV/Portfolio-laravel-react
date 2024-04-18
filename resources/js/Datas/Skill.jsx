@@ -1,7 +1,7 @@
 import { FaCss3Alt, FaHtml5, FaReact, FaVuejs, FaNodeJs, FaPhp, FaLaravel, FaAws } from "react-icons/fa"
-import { SiMongodb, SiJavascript } from "react-icons/si"
+import { SiMongodb, SiJavascript, SiNextdotjs } from "react-icons/si"
 import { GrMysql } from "react-icons/gr"
-import { BiLogoTailwindCss } from "react-icons/bi"
+import { BiLogoTailwindCss, BiLogoTypescript, BiLogoPostgresql  } from "react-icons/bi"
 
 export const front = {
     'HTML': {svg: <FaHtml5 />, color: '#ff6600'},
@@ -9,13 +9,16 @@ export const front = {
     'Tailwind': {svg: <BiLogoTailwindCss />, color: '#33d6ff'},
     'JavaScript': {svg: <SiJavascript />, color: '#ffff00'},
     'Vue3': {svg: <FaVuejs />, color: '#009933'},
-    'React': {svg: <FaReact />, color: '#00ccff'}
+    'React': {svg: <FaReact />, color: '#00ccff'},
+    'TypeScript': {svg: <BiLogoTypescript />, color: '#3366cc'}
 }
 
 export const back = {
     'Node': {svg: <FaNodeJs />, color: '#009933'},
+    'NextJs': {svg: <SiNextdotjs />},
     'PHP': {svg: <FaPhp />, color: '#3366cc'},
     'SQL / MySQL': {svg: <GrMysql />, color: '#0066cc'},
+    'Postgresql': {svg: <BiLogoPostgresql />, color: '#0066cc'},
     'MongoDb': {svg: <SiMongodb />, color: '#33cc33'},
     'LARAVEL': {svg: <FaLaravel />, color: '#ff3300'},
     'API REST': '',
@@ -37,13 +40,16 @@ export const skills = {
         'Tailwind': {svg: <BiLogoTailwindCss />, color: '#33d6ff'},
         'JavaScript': {svg: <SiJavascript />, color: '#ffff00'},
         'Vue3': {svg: <FaVuejs />, color: '#009933'},
-        'React': {svg: <FaReact />, color: '#00ccff'}
+        'React': {svg: <FaReact />, color: '#00ccff'},
+        'TypeScript': {svg: <BiLogoTypescript />, color: '#3366cc'}
     },
 
     Back: {
+        'Next 14': {svg: <SiNextdotjs />},
         'Node': {svg: <FaNodeJs />, color: '#009933'},
         'PHP': {svg: <FaPhp />, color: '#3366cc'},
         'SQL / MySQL': {svg: <GrMysql />, color: '#0066cc'},
+        'Postgresql': {svg: <BiLogoPostgresql />, color: '#0066cc'},
         'MongoDb': {svg: <SiMongodb />, color: '#33cc33'},
         'LARAVEL': {svg: <FaLaravel />, color: '#ff3300'},
         'AWS': {svg: <FaAws />},
