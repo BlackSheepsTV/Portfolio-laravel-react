@@ -1,25 +1,22 @@
 import YouTube from 'react-youtube'
 
-const VideoPlayer = () => {
-  const videoId = 'T4rhSRbCHfY';
+export default function VideoPlayer({ youtubeVideoId, aspectRatio, optsValues }) {
+  const videoId = youtubeVideoId
 
   const opts = {
-    width: '100%',
-    aspectRatio: '16:9',
+    width: optsValues.width,
+    height: optsValues.height,
+    aspectRatio: aspectRatio,
     playerVars: {
       autoplay: 0, 
     },
-  };
+  }
 
   const onReady = (event) => {
-    event.target.pauseVideo(); 
-  };
+    event.target.pauseVideo()
+  }
 
   return (
-    <div className='w-full h-full sm:w-[640px] sm:h-[360px] rounded-xl overflow-hidden'>
-      <YouTube videoId={videoId} opts={opts} onReady={onReady} />
-    </div>
-  );
-};
-
-export default VideoPlayer;
+    <YouTube videoId={videoId} opts={opts} onReady={onReady} className='rounded-lg overflow-hidden' />
+  )
+}

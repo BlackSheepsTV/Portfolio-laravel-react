@@ -35,6 +35,8 @@ function Parcours() {
                 date={item.date}
                 icon={item.icon}
                 iconStyle={{
+                    position: 'relative',
+                    display: 'flex',
                     background:
                     theme === "light" ? "white" : "#334155",
                     fontSize: "1.5rem",

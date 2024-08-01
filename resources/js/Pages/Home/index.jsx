@@ -129,9 +129,11 @@ function Home() {
         <div className='section-wrapper'>
           <div className='section-title flex-col'>
             <h2>My extra</h2>
-            <p className='text-center'>I have make some montage video, here you can watch one</p>
+            <p className='text-center'>I have make some montage video</p>
           </div>
-          <VideoPlayer />
+          <div className='w-full h-full sm:w-[640px] sm:h-[360px]'>
+            <VideoPlayer youtubeVideoId='T4rhSRbCHfY' aspectRatio='16:9' optsValues={{width: '100%', height: '360'}} />
+          </div>
         </div>
         
       </div>                        

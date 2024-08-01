@@ -4,6 +4,7 @@ import { Card, CardHeader, CardBody, Image, Chip } from "@nextui-org/react"
 import { projects } from '../../Datas/Project'
 import {Button} from "@nextui-org/react"
 import {MdNavigateBefore, MdNavigateNext } from 'react-icons/md'
+import VideoPlayer from '../Youtube/Youtube'
 
 
 export default function Parcours() {
@@ -54,6 +55,12 @@ export default function Parcours() {
                         width={720}
                         />}
 
+                        {project.videoSrc && 
+                            <video width="360" height="640" controls className='rounded-lg overflow-hidden'>                                
+                                <source src={project.videoSrc} type="video/mp4" />
+                                Votre navigateur ne supporte pas la balise vidéo.
+                            </video>
+                        }
                         <p className='w-full text-sm' dangerouslySetInnerHTML={{ __html: project.desc.replace(/\n/g, '<br>') }}></p>
                         
                         <div className='flex justify-center items-center flex-wrap gap-4'>

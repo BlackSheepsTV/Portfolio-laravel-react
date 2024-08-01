@@ -2,13 +2,21 @@ import { FaNetworkWired, FaComputer } from 'react-icons/fa6'
 import { IoGameController } from 'react-icons/io5'
 import { GiElectric } from 'react-icons/gi'
 import { BiRfid } from 'react-icons/bi'
+import { Image } from '@nextui-org/react'
 
 export const parcours = [
+    {
+        date: '10/2023 - 07/2024',
+        entreprise: 'Created my SaaS - Outdamage.gg',
+        objectif: '• League Of Legends SaaS',
+        icon: <Image src='/storage/outdamage_logo_100.avif' width={20} height={20} alt='outdamage logo' classNames={{wrapper: '!max-w-[40px] w-full h-full flex items-center justify-center'}}></Image>,
+        color: '#38bdf8'
+    },
     {
         date: '07/2017 - 08/2021',
         entreprise: 'Metaleak',
         objectif: '• Semi professional player (PUBG) • Streamer ( twitch )',
-        icon: <IoGameController />,
+        icon: <span className='w-full h-full'><IoGameController /></span>,
         color: '#f43f5e'
     },
 
@@ -16,7 +24,7 @@ export const parcours = [
         date: '06/2014 - 07/2014',
         entreprise: 'Hœnheim, 67800 RF Conception',
         objectif: '• Creation of boxes for receiving RFID chips',
-        icon: <BiRfid />,
+        icon: <BiRfid className='w-full h-full' />,
         color: '#38bdf8'
     },
 
