@@ -9,7 +9,7 @@ export const parcours = [
         date: '10/2023 - 07/2024',
         entreprise: 'Created my SaaS - Outdamage.gg',
         objectif: '• League Of Legends SaaS',
-        icon: <Image src='/storage/outdamage_logo_100.avif' width={20} height={20} alt='outdamage logo' classNames={{wrapper: '!max-w-[40px] w-full h-full flex items-center justify-center'}}></Image>,
+        icon: <Image src='/storage/outdamage_logo_100.avif' width={20} height={20} alt='outdamage logo' classNames={{wrapper: '!max-w-full w-full h-full flex items-center justify-center'}}></Image>,
         color: '#38bdf8'
     },
     {
